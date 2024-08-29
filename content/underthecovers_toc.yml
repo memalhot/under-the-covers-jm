@@ -6,6 +6,6 @@ parts:
   chapters:
   - file: howtoread/chapter
 - caption: 'THE UNIX DEVELOPMENT ENVIRONMENT'
-  numbered: false
+  numbered: true
   chapters:
   - file: unix/intro
