@@ -562,34 +562,18 @@ UNIX and it’s children literally make our digital world go around and will lik
 </section>
 <section id="visualizing-a-unix-system">
 <h3><span class="section-number">1.3.4. </span>Visualizing a Unix system<a class="headerlink" href="#visualizing-a-unix-system" title="Link to this heading">#</a></h3>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">htmlFig</span><span class="p">(</span><span class="s2">&quot;../images/UnixRunning.png&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>              <span class="n">caption</span><span class="o">=</span><span class="s2">&quot;Figure: Running Unix system.&quot;</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span>              <span class="n">width</span><span class="o">=</span><span class="s2">&quot;50%&quot;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span>              <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;fig:runningunix&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>              <span class="n">margin</span><span class="o">=</span><span class="s2">&quot;auto auto auto 1.5em&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;&#39;&#39;          </span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="s1"> We visualized a running Unix system with the Hardware of the computer at the bottom, shaded </span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s1"> blue, and the running software, shaded in green, above it.  The Unix Kernel is a persistent </span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s1"> program that forms the foundation for launching and running instances of user programs and </span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span><span class="s1"> is illustrated as the green oval labeled &quot;UNIX Kernel&quot;.  The smaller green circles represent </span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span><span class="s1"> the currently running programs that have been started. Each time a program is started we </span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span><span class="s1"> visualize a new circle representing a new running instances of the program.   In the diagram </span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span><span class="s1"> each is labeled with the program that was used to start it. Each instance is independent and </span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span><span class="s1"> has its own &quot;life-time&quot;.   If a specific running instance of a program ends, crashes or is </span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="s1"> terminated (killed) by the user we would remove its circle.  So while in reality we can&#39;t </span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="s1"> physically see the programs running we none the less think of the running software as forming </span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span><span class="s1"> a world of its own, inside the machine, with the kernel enabling its construction and management.</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span><span class="s1"> &#39;&#39;&#39;</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;htmlFig&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
+<p><img alt="running a unix system" src="../images/src/sys.png" /></p>
+<p>We visualized a running Unix system with the Hardware of the computer at the bottom, shaded
+blue, and the running software, shaded in green, above it.  The Unix Kernel is a persistent
+program that forms the foundation for launching and running instances of user programs and
+is illustrated as the green oval labeled “UNIX Kernel”.  The smaller green circles represent
+the currently running programs that have been started. Each time a program is started we
+visualize a new circle representing a new running instances of the program.   In the diagram
+each is labeled with the program that was used to start it. Each instance is independent and
+has its own “life-time”.   If a specific running instance of a program ends, crashes or is
+terminated (killed) by the user we would remove its circle.  So while in reality we can’t
+physically see the programs running we none the less think of the running software as forming
+a world of its own, inside the machine, with the kernel enabling its construction and management.</p>
 <section id="processes-and-executables">
 <h4><span class="section-number">1.3.4.1. </span>Processes and Executables<a class="headerlink" href="#processes-and-executables" title="Link to this heading">#</a></h4>
 <p>In UNIX a running program is called a <strong>process</strong>. A program that a process can be created from is called and <strong>executable</strong>.   In some sense this book is a journey into understanding what exactly these are, how they relate to each other, the operating system and ultimately the hardware.</p>
