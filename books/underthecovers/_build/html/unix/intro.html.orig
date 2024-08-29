@@ -461,7 +461,7 @@ document.write(`
 <h2><span class="section-number">1.1. </span>Computer<a class="headerlink" href="#computer" title="Link to this heading">#</a></h2>
 <p>Today a computer can take many forms from desktop Personal Computers (PCs), laptops, mobile phones, tablets, building scale super-computers, etc.  In some sense the defining property we care about is that the device supports a classic model for programming it – we call this model the von Neumann architecture.  We will discuss this model in much more detail when we start considering exactly how software and hardware work with respect to <a class="reference internal" href="#../assembly/intro.ipynb"><span class="xref myst">assembly language</span></a>.   Below illustrates how we will visually represent a generic von Neumann based computer and summarizes what we need to know for now.</p>
 <figure class="align-center" id="id1">
-<img alt="Von Neummann Computer" src="unix/(../images/SLS_TheMachine.png)" />
+<img alt="Von Neummann Computer" src="unix/images/SLS_TheMachine.png)" />
 <figcaption>
 <p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">Our illustration of a von Neumann computer</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
@@ -506,8 +506,8 @@ document.write(`
 </section>
 <section id="unix">
 <h2><span class="section-number">1.3. </span>UNIX<a class="headerlink" href="#unix" title="Link to this heading">#</a></h2>
-<img align="right" src="../images/Unix.gif" width="25%" style="margin: auto auto auto auto"> 
-UNIX on the other hand assumes that its users are primarily programmers.  Its design and collection of tools are not meant to be particularly user friendly.   Rather UNIX is designed to allow programmers to be very productive and to support a broad range of programming tools.  Many of the concepts and mechanisms of UNIX underly, are in, other operating systems but have been hidden or obscured to make things easier for their non-programmer users.  
+<p><img alt="unix" src="../images/src/unix.png" /></p>
+<p>UNIX on the other hand assumes that its users are primarily programmers.  Its design and collection of tools are not meant to be particularly user friendly.   Rather UNIX is designed to allow programmers to be very productive and to support a broad range of programming tools.  Many of the concepts and mechanisms of UNIX underly, are in, other operating systems but have been hidden or obscured to make things easier for their non-programmer users.</p>
 <section id="an-operating-system-built-by-programmers-for-programmers">
 <h3><span class="section-number">1.3.1. </span>An operating System Built by Programmers for Programmers<a class="headerlink" href="#an-operating-system-built-by-programmers-for-programmers" title="Link to this heading">#</a></h3>
 <p>The <a class="reference external" href="https://www.opengroup.org/membership/forums/platform/unix">UNIX</a> operating system was built by master programmers who valued programmability and productivity.  In some sense learning to work on the UNIX systems is a right of passage that not only teaches you how to be productive on a computer running the UNIX operating system but teaches you to think and act like a programmer.</p>
@@ -515,13 +515,11 @@ UNIX on the other hand assumes that its users are primarily programmers.  Its de
 <p>I know this all sounds a bit recursive – welcome to computer science.  As we start interacting with UNIX it will make more sense.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>History
-<a class="reference external" href="https://www.bell-labs.com/about/history/innovation-stories/50-years-unix/#gref">50 Years of Unix</a> <br>
-The people and its history are a fascinating journey into how we have gotten to where we are today. <br>
-<a class="reference external" href="https://spectrum.ieee.org/the-strange-birth-and-long-life-of-unix#toggle-gdpr">The Strange birth and long life of Unix</a> <br>
-UNIX and it’s children literally make our digital world go around and will likely continue to do so for the quite some time.</p>
+<p>History <a class="reference external" href="https://www.bell-labs.com/about/history/innovation-stories/50-years-unix/#gref">50 Years of Unix</a></p>
+<p>The people and its history are a fascinating journey into how we have gotten to where we are today.</p>
+<p><a class="reference external" href="https://spectrum.ieee.org/the-strange-birth-and-long-life-of-unix#toggle-gdpr">The Strange birth and long life of Unix</a></p>
+<p>UNIX and it’s children literally make our digital world go around and will likely continue to do so for the quite some time.</p>
 </div>
-<p><a id='UnixKernel_sec'></a></p>
 </section>
 <section id="the-kernel">
 <h3><span class="section-number">1.3.2. </span>The Kernel<a class="headerlink" href="#the-kernel" title="Link to this heading">#</a></h3>
