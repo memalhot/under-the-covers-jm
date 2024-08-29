@@ -514,11 +514,11 @@ document.write(`
 <p>Given its programming focus UNIX is organized around two categories of software – kernel and user.  The kernel is a component of the UNIX that users of UNIX do not directly interact with.  It is the core software that is used to manage the various devices of the computer and construct an environment that allows programmers to create new users programs.  The idea is that very little is really built into UNIX rather its users are encouraged to write lots of small programs that build on the functionality of the kernel to do useful things.  The kernel’s main job is to provide the ability to run new program, provide those programs with access to the hardware, and provide common ways for programs to interconnect, work together.</p>
 <p>I know this all sounds a bit recursive – welcome to computer science.  As we start interacting with UNIX it will make more sense.</p>
 <div class="tip admonition">
-<p class="admonition-title">History!</p>
-<p><a class="reference external" href="https://www.bell-labs.com/about/history/innovation-stories/50-years-unix/#gref">50 Years of Unix</a>
-The people and its history are a fascinating journey into how we have gotten to where we are today.
-<a class="reference external" href="https://spectrum.ieee.org/the-strange-birth-and-long-life-of-unix#toggle-gdpr">The Strange birth and long life of Unix</a>
-UNIX and it’s children literally make our digital world go around and will likely continue to do so for the quite some time.</p>
+<p class="admonition-title">History</p>
+<p><a class="reference external" href="https://www.bell-labs.com/about/history/innovation-stories/50-years-unix/#gref">50 Years of Unix</a></p>
+<p>The people and its history are a fascinating journey into how we have gotten to where we are today.</p>
+<p><a class="reference external" href="https://spectrum.ieee.org/the-strange-birth-and-long-life-of-unix#toggle-gdpr">The Strange birth and long life of Unix</a></p>
+<p>UNIX and it’s children literally make our digital world go around and will likely continue to do so for the quite some time.</p>
 </div>
 </section>
 <section id="the-kernel">
@@ -546,7 +546,6 @@ UNIX and it’s children literally make our digital world go around and will lik
 <p>A critical point of the Unix design: <strong>Humans do not and cannot directly interact with the kernel, only User Programs can interact with the kernel by invoking kernel functions</strong>.  This design promotes and encourages that the rest of the operating systems and for that matter all other software be viewed as separated from the kernel.  As such it encourages a building block approach where several alternatives for any given OS feature, like human interface programs, can be added, supported and explored while the kernel remains without change.  The goal is to empower programmers to grow and extend the system in a natural and seamless way.</p>
 <p>It is worth noting most modern operating systems have adopted this basic organization where there is a base kernel component and a large collection of pre-packaged user programs.</p>
 </div>
-<p><a id='UnixUser_sec'></a></p>
 </section>
 <section id="user-programs">
 <h3><span class="section-number">1.3.3. </span>User Programs<a class="headerlink" href="#user-programs" title="Link to this heading">#</a></h3>
@@ -591,6 +590,10 @@ a world of its own, inside the machine, with the kernel enabling its constructio
 <section id="bottomline">
 <h2><span class="section-number">1.4. </span>Bottomline<a class="headerlink" href="#bottomline" title="Link to this heading">#</a></h2>
 <p>UNIX comes with the kernel and a large collection of existing programs that permit a programmer to write more programs, that they and others can use.   In this book we will focus on what a program really is, how they are constructed and along the way the core tools, skills and ideas that underly all of computing.  Given UNIX’s programmer focus and transparency it is a good choice for us. Furthermore, learning how to be productive in the UNIX environment will teach us a lot about being productive programmers period.</p>
+<div class="note admonition">
+<p class="admonition-title">FYI</p>
+<p><em>What is LINUX?</em>: Linux or more formally GNU/Linux is an open source variant of the UNIX operating system that is in heavy use today. Every imaginable type of computer runs Linux.  In some sense it has become the computing equivalent of both “The Force” and “Duct Tape”. It is worth noting that Linux began its life because a University student got interested in Operating Systems and was frustrated with the current “Closed” state of the art.</p>
+</div>
 </section>
 </section>
 
