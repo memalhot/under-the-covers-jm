@@ -61,6 +61,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'unix/intro';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. What is a Terminal and why do we still use them?" href="terminal.html" />
     <link rel="prev" title="How to read this book" href="../howtoread/chapter.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -183,6 +184,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">THE UNIX DEVELOPMENT ENVIRONMENT</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Operating Systems and UNIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminal.html">2. What is a Terminal and why do we still use them?</a></li>
 </ul>
 
     </div>
@@ -551,11 +553,11 @@ document.write(`
 <h3><span class="section-number">1.3.3. </span>User Programs<a class="headerlink" href="#user-programs" title="Link to this heading">#</a></h3>
 <p>Largely what most people think of when they think of an OS is the large body of pre-packaged user programs that can be installed with the kernel of the OS.   Typically there are at least three categories of user programs, including:</p>
 <ol class="arabic simple">
-<li><p>Display Servers:  These are collections of programs designed to operate specific devices for human interaction such as graphical screens, keyboards, mice, touch pads, touch screens, etc.  The first layer of this software (after the kernel) is typically some form of <a class="reference external" href="https://en.wikipedia.org/wiki/Windowing_system#Display_server">Windowing System</a>.  Examples include Microsoft’s <a class="reference external" href="https://en.wikipedia.org/wiki/Desktop_Window_Manager">Desktop Window Manager</a>, Apple’s <a class="reference external" href="https://en.wikipedia.org/wiki/Quartz_Compositor">Quartz Compositor</a> and the <a class="reference external" href="https://en.wikipedia.org/wiki/X_Window_System">X Window System</a> traditionally used by Unix operating systems. Today we are also seeing the rise of using web-browsers to present a graphical interface system this includes <a class="reference external" href="https://en.wikipedia.org/wiki/Project_Jupyter#JupyterLab">Jupyter Lab</a> which we make use of.   However, as in the case of Unix, older systems they typically retain support for their rich older <a class="reference internal" href="#../unix/terminal.ipynb"><span class="xref myst">ASCII terminal devices</span></a> in the form of command line shell programs (<a class="reference internal" href="#../unix/shellintro.html"><span class="xref myst">Shell</span></a>).</p></li>
+<li><p>Display Servers:  These are collections of programs designed to operate specific devices for human interaction such as graphical screens, keyboards, mice, touch pads, touch screens, etc.  The first layer of this software (after the kernel) is typically some form of <a class="reference external" href="https://en.wikipedia.org/wiki/Windowing_system#Display_server">Windowing System</a>.  Examples include Microsoft’s <a class="reference external" href="https://en.wikipedia.org/wiki/Desktop_Window_Manager">Desktop Window Manager</a>, Apple’s <a class="reference external" href="https://en.wikipedia.org/wiki/Quartz_Compositor">Quartz Compositor</a> and the <a class="reference external" href="https://en.wikipedia.org/wiki/X_Window_System">X Window System</a> traditionally used by Unix operating systems. Today we are also seeing the rise of using web-browsers to present a graphical interface system this includes <a class="reference external" href="https://en.wikipedia.org/wiki/Project_Jupyter#JupyterLab">Jupyter Lab</a> which we make use of.   However, as in the case of Unix, older systems they typically retain support for their rich older <a class="reference internal" href="terminal.html"><span class="std std-doc">ASCII terminal devices</span></a> in the form of command line shell programs (<a class="reference internal" href="#../unix/shellintro.ipynb"><span class="xref myst">Shell</span></a>).</p></li>
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/File_manager">File Managers</a>:  Programs that work with a Display Server and provide a human the ability to explore and find information about the other programs and data installed.  Examples include Apple’s <a class="reference external" href="https://en.wikipedia.org/wiki/Finder_(software)">Finder</a> and Microsoft’s <a class="reference external" href="https://en.wikipedia.org/wiki/File_Manager_(Windows)">File Manager</a>.</p></li>
 <li><p>Other: There is a highly variable collection of software that form the rest of the user programs.  This body largely depending on the OS and its intended target audience.   In the case of OS’s that are geared to personal computers this set of software includes:  media programs, web-browsers, productivity applications and more.  While not always standard, the tools for developing new programs also fall in this category.   These include program editors, programming languages and debuggers.  A hallmark of Unix is the rich body of programming tools associated with it (including the tools to rebuild the kernel itself).</p></li>
 </ol>
-<p>One of the distinguishing feature of Unix is its standard user command line programs that are geared to programmers (<a class="reference external" href="https://en.wikipedia.org/wiki/List_of_Unix_commands">https://en.wikipedia.org/wiki/List_of_Unix_commands</a>).  While they lack graphical interfaces and are <a class="reference internal" href="#../unix/terminal.html#ASCII_sec"><span class="xref myst">ASCII</span></a>/command line oriented they form a very rich and powerful set of building blocks that allow a knowledgeable programmer to rapidly create turnkey solutions including the; text searching and transformation, data wrangling, automation, as well as the development and debugging of large applications.</p>
+<p>One of the distinguishing feature of Unix is its standard user command line programs that are geared to programmers (<a class="reference external" href="https://en.wikipedia.org/wiki/List_of_Unix_commands">https://en.wikipedia.org/wiki/List_of_Unix_commands</a>).  While they lack graphical interfaces and are <a class="reference internal" href="terminal.html#ASCII_sec"><span class="std std-ref">ASCII</span></a>/command line oriented they form a very rich and powerful set of building blocks that allow a knowledgeable programmer to rapidly create turnkey solutions including the; text searching and transformation, data wrangling, automation, as well as the development and debugging of large applications.</p>
 <p><a id='UnixViz_sec'></a></p>
 </section>
 <section id="visualizing-a-unix-system">
@@ -635,6 +637,15 @@ a world of its own, inside the machine, with the kernel enabling its constructio
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">How to read this book</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="terminal.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>What is a Terminal and why do we still use them?</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
