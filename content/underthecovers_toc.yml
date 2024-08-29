@@ -2,8 +2,6 @@ format: jb-book
 root: underthecovers_intro
 parts:
 - caption: 'Part 1'
-  numbered: true
+  numbered: false
   chapters:
-  - file: dummy_part/chapter
-    sections: 
-    - file: dummy_part/section
+  - file: howtoread/chapter
