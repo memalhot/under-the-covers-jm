@@ -1,7 +1,11 @@
 format: jb-book
 root: underthecovers_intro
 parts:
-- caption: 'How to Read This Book'
+- caption: 'HOW TO READ THIS BOOK'
   numbered: false
   chapters:
   - file: howtoread/chapter
+- caption: 'THE UNIX DEVELOPMENT ENVIRONMENT'
+  numbered: false
+  chapters:
+  - file: unix/intro
