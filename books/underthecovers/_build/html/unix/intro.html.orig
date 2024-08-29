@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Operating Systems and UNIX &#8212; Under the Covers</title>
+    <title>1. Operating Systems and UNIX &#8212; Under the Covers</title>
   
   
   
@@ -182,7 +182,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">THE UNIX DEVELOPMENT ENVIRONMENT</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Operating Systems and UNIX</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Operating Systems and UNIX</a></li>
 </ul>
 
     </div>
@@ -426,23 +426,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computer">Computer</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#programmer-vs-user">Programmer vs User</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computer">1.1. Computer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#programmer-vs-user">1.1.1. Programmer vs User</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful">Useful</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unix">UNIX</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-operating-system-built-by-programmers-for-programmers">An operating System Built by Programmers for Programmers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-kernel">The Kernel</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-programs">User Programs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-a-unix-system">Visualizing a Unix system</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#processes-and-executables">Processes and Executables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful">1.2. Useful</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unix">1.3. UNIX</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-operating-system-built-by-programmers-for-programmers">1.3.1. An operating System Built by Programmers for Programmers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-kernel">1.3.2. The Kernel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-programs">1.3.3. User Programs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-a-unix-system">1.3.4. Visualizing a Unix system</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#processes-and-executables">1.3.4.1. Processes and Executables</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-to-studying-unix">Benefits to studying UNIX</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-to-studying-unix">1.3.5. Benefits to studying UNIX</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bottomline">Bottomline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bottomline">1.4. Bottomline</a></li>
 </ul>
             </nav>
         </div>
@@ -455,17 +455,17 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="operating-systems-and-unix">
-<h1>Operating Systems and UNIX<a class="headerlink" href="#operating-systems-and-unix" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">1. </span>Operating Systems and UNIX<a class="headerlink" href="#operating-systems-and-unix" title="Link to this heading">#</a></h1>
 <p>We call the collection of software that we use to make a “computer”  “useful” an operating system.  But what exactly does this mean?</p>
 <section id="computer">
-<h2>Computer<a class="headerlink" href="#computer" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.1. </span>Computer<a class="headerlink" href="#computer" title="Link to this heading">#</a></h2>
 <p>Today a computer can take many forms from desktop Personal Computers (PCs), laptops, mobile phones, tablets, building scale super-computers, etc.  In some sense the defining property we care about is that the device supports a classic model for programming it – we call this model the von Neumann architecture.  We will discuss this model in much more detail when we start considering exactly how software and hardware work with respect to <a class="reference internal" href="#../assembly/intro.ipynb"><span class="xref myst">assembly language</span></a>.   Below illustrates how we will visually represent a generic von Neumann based computer and summarizes what we need to know for now.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">htmlFig</span><span class="p">(</span><span class="s2">&quot;../images/SLS_TheMachine.png&quot;</span><span class="p">,</span> 
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">htmlFig</span><span class="p">(</span><span class="s2">&quot;../images/SLS_TheMachine.png&quot;</span><span class="p">,</span> 
 <span class="g g-Whitespace">      </span><span class="mi">2</span>               <span class="n">align</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> 
 <span class="g g-Whitespace">      </span><span class="mi">3</span>               <span class="n">margin</span><span class="o">=</span><span class="s2">&quot;auto 3em 0 auto&quot;</span><span class="p">,</span> 
 <span class="g g-Whitespace">      </span><span class="mi">4</span>               <span class="n">width</span><span class="o">=</span><span class="s2">&quot;100%&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;fig:vnm&quot;</span><span class="p">,</span> 
@@ -505,28 +505,28 @@ document.write(`
 </ul>
 <p>For the moment it suffices to say that programming a computer means being able to apply your knowledge of a programming language and existing software to have the computer do something you want it to.  For example, edit photos, play music, maintain a list of grocery items, calculate PI, send email, browse the web, test if a molecule might have promise as a new vaccine, automatically adjust the temperature of your home, control a car, etc.</p>
 <section id="programmer-vs-user">
-<h3>Programmer vs User<a class="headerlink" href="#programmer-vs-user" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.1.1. </span>Programmer vs User<a class="headerlink" href="#programmer-vs-user" title="Link to this heading">#</a></h3>
 <p>To be honest many people simply care that the computer can run existing programs – we will call these folks “Users”. However, “Programmers” are a special type of user.  Programmers use Operating Systems, and other software tools to create new programs themselves.  As a matter of fact some programmers simply focus on developing programs that make writing programs easier – like the folks that develop the operating system software, programming languages, editors, etc.</p>
 </section>
 </section>
 <section id="useful">
-<h2>Useful<a class="headerlink" href="#useful" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.2. </span>Useful<a class="headerlink" href="#useful" title="Link to this heading">#</a></h2>
 <p>So from our perspective, the main aspects of the operating system, that we care about, is that it makes it ease for programmers to create new programs.  In addition we would like an operating system that does not hide things from us so that we can explore how programs (and computers) work.</p>
 <p>Operating Systems are designed and created with specific uses and hardware in mind.  Some are designed for special purpose computers and the programs that are expected to run on them like computers built into an airplane to control its various parts or a super-computer which is expected to run complex and large scientific simulation programs.  While other operating systems are designed primarily to enable users to install and run commercial grade programs on their personal devices.  These operating systems while they do enable programmers to write new programs, they are designed to hide most of these aspects from their “normal” target user.  Those users mainly just wants to use programs written by others.  The interface of these operating systems tend to focus on graphics and visually oriented ways of interacting with programs.</p>
 </section>
 <section id="unix">
-<h2>UNIX<a class="headerlink" href="#unix" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.3. </span>UNIX<a class="headerlink" href="#unix" title="Link to this heading">#</a></h2>
 <img align="right" src="../images/Unix.gif" width="25%" style="margin: auto auto auto auto"> 
 UNIX on the other hand assumes that its users are primarily programmers.  Its design and collection of tools are not meant to be particularly user friendly.   Rather UNIX is designed to allow programmers to be very productive and to support a broad range of programming tools.  Many of the concepts and mechanisms of UNIX underly, are in, other operating systems but have been hidden or obscured to make things easier for their non-programmer users.  
 <section id="an-operating-system-built-by-programmers-for-programmers">
-<h3>An operating System Built by Programmers for Programmers<a class="headerlink" href="#an-operating-system-built-by-programmers-for-programmers" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.3.1. </span>An operating System Built by Programmers for Programmers<a class="headerlink" href="#an-operating-system-built-by-programmers-for-programmers" title="Link to this heading">#</a></h3>
 <p>The <a class="reference external" href="https://www.opengroup.org/membership/forums/platform/unix">UNIX</a> operating system was built by master programmers who valued programmability and productivity.  In some sense learning to work on the UNIX systems is a right of passage that not only teaches you how to be productive on a computer running the UNIX operating system but teaches you to think and act like a programmer.</p>
 <p>Given its programming focus UNIX is organized around two categories of software – kernel and user.  The kernel is a component of the UNIX that users of UNIX do not directly interact with.  It is the core software that is used to manage the various devices of the computer and construct an environment that allows programmers to create new users programs.  The idea is that very little is really built into UNIX rather its users are encouraged to write lots of small programs that build on the functionality of the kernel to do useful things.  The kernel’s main job is to provide the ability to run new program, provide those programs with access to the hardware, and provide common ways for programs to interconnect, work together.</p>
 <p>I know this all sounds a bit recursive – welcome to computer science.  As we start interacting with UNIX it will make more sense.</p>
 <p><a id='UnixKernel_sec'></a></p>
 </section>
 <section id="the-kernel">
-<h3>The Kernel<a class="headerlink" href="#the-kernel" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.3.2. </span>The Kernel<a class="headerlink" href="#the-kernel" title="Link to this heading">#</a></h3>
 <p>The Kernel is the bottom layer of software that has direct access to all the hardware.  There is a single instance of the kernel that bootstraps the hardware.  It provides a means for starting application programs (often also called user programs).  The kernel performs and provides several important abilities.</p>
 <ol class="arabic simple">
 <li><p>The kernel enables several user programs to run at the same time.</p></li>
@@ -550,7 +550,7 @@ UNIX on the other hand assumes that its users are primarily programmers.  Its de
 <p><a id='UnixUser_sec'></a></p>
 </section>
 <section id="user-programs">
-<h3>User Programs<a class="headerlink" href="#user-programs" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.3.3. </span>User Programs<a class="headerlink" href="#user-programs" title="Link to this heading">#</a></h3>
 <p>Largely what most people think of when they think of an OS is the large body of pre-packaged user programs that can be installed with the kernel of the OS.   Typically there are at least three categories of user programs, including:</p>
 <ol class="arabic simple">
 <li><p>Display Servers:  These are collections of programs designed to operate specific devices for human interaction such as graphical screens, keyboards, mice, touch pads, touch screens, etc.  The first layer of this software (after the kernel) is typically some form of <a class="reference external" href="https://en.wikipedia.org/wiki/Windowing_system#Display_server">Windowing System</a>.  Examples include Microsoft’s <a class="reference external" href="https://en.wikipedia.org/wiki/Desktop_Window_Manager">Desktop Window Manager</a>, Apple’s <a class="reference external" href="https://en.wikipedia.org/wiki/Quartz_Compositor">Quartz Compositor</a> and the <a class="reference external" href="https://en.wikipedia.org/wiki/X_Window_System">X Window System</a> traditionally used by Unix operating systems. Today we are also seeing the rise of using web-browsers to present a graphical interface system this includes <a class="reference external" href="https://en.wikipedia.org/wiki/Project_Jupyter#JupyterLab">Jupyter Lab</a> which we make use of.   However, as in the case of Unix, older systems they typically retain support for their rich older <a class="reference internal" href="#../unix/terminal.ipynb"><span class="xref myst">ASCII terminal devices</span></a> in the form of command line shell programs (<a class="reference internal" href="#../unix/shellintro.html"><span class="xref myst">Shell</span></a>).</p></li>
@@ -561,16 +561,16 @@ UNIX on the other hand assumes that its users are primarily programmers.  Its de
 <p><a id='UnixViz_sec'></a></p>
 </section>
 <section id="visualizing-a-unix-system">
-<h3>Visualizing a Unix system<a class="headerlink" href="#visualizing-a-unix-system" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.3.4. </span>Visualizing a Unix system<a class="headerlink" href="#visualizing-a-unix-system" title="Link to this heading">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 </div>
 <section id="processes-and-executables">
-<h4>Processes and Executables<a class="headerlink" href="#processes-and-executables" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">1.3.4.1. </span>Processes and Executables<a class="headerlink" href="#processes-and-executables" title="Link to this heading">#</a></h4>
 <p>In UNIX a running program is called a <strong>process</strong>. A program that a process can be created from is called and <strong>executable</strong>.   In some sense this book is a journey into understanding what exactly these are, how they relate to each other, the operating system and ultimately the hardware.</p>
 </section>
 </section>
 <section id="benefits-to-studying-unix">
-<h3>Benefits to studying UNIX<a class="headerlink" href="#benefits-to-studying-unix" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.3.5. </span>Benefits to studying UNIX<a class="headerlink" href="#benefits-to-studying-unix" title="Link to this heading">#</a></h3>
 <p>UNIX’s terminal interface and program development environment became the gold standard for university Computer Science education.  The following are some of the reasons it became so and why it continues to be critical both academically, scientifically and industrially.</p>
 <p>The most basic interface it presents, the <a class="reference internal" href="#../unix/shellintro.ipynb"><span class="xref myst">Shell</span></a>, is a programmer oriented model for interacting with the computer.  Furthermore Unix comes with a large collection of composable and extensible tools for processing ASCII documents that naturally integrate and extend the power of the Shell.  These tools make it easy to write new programs including programs that translate ASCII documents, source code in one language, into source code of another language.</p>
 <p>While it takes some effort to learn its strange command line interface, doing so teaches you to think like a programmer.  Where you are encouraged to writing little re-usable programs that you incrementally evolve as needed and combine with others to get big tasks done.  Generally trying to avoid any particular program from getting too complicated.</p>
@@ -580,14 +580,9 @@ UNIX on the other hand assumes that its users are primarily programmers.  Its de
 </section>
 </section>
 <section id="bottomline">
-<h2>Bottomline<a class="headerlink" href="#bottomline" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.4. </span>Bottomline<a class="headerlink" href="#bottomline" title="Link to this heading">#</a></h2>
 <p>UNIX comes with the kernel and a large collection of existing programs that permit a programmer to write more programs, that they and others can use.   In this book we will focus on what a program really is, how they are constructed and along the way the core tools, skills and ideas that underly all of computing.  Given UNIX’s programmer focus and transparency it is a good choice for us. Furthermore, learning how to be productive in the UNIX environment will teach us a lot about being productive programmers period.</p>
-<blockquote>
-<div><p><a class="reference internal" href="images/fyi.png"><img alt="images/fyi.png" class="align-left" src="images/fyi.png" style="width: 60px;" /></a> <p style="background-color:powderblue;">
-<em>What is LINUX?</em>: Linux or more formally GNU/Linux is an open source variant of the UNIX operating system that is in heavy use today. Every imaginable type of computer runs Linux.  In some sense it has become the computing equivalent of both “The Force” and “Duct Tape”.    It is worth noting that Linux began its life because a University student got interested in Operating Systems and was frustrated with the current “Closed” state of the art.
-<a class="reference internal" href="images/tux.png"><img alt="images/tux.png" class="align-right" src="images/tux.png" style="width: 60px;" /></a></p>
-</div></blockquote>
-</p></section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -645,23 +640,23 @@ UNIX on the other hand assumes that its users are primarily programmers.  Its de
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computer">Computer</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#programmer-vs-user">Programmer vs User</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computer">1.1. Computer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#programmer-vs-user">1.1.1. Programmer vs User</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful">Useful</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unix">UNIX</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-operating-system-built-by-programmers-for-programmers">An operating System Built by Programmers for Programmers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-kernel">The Kernel</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-programs">User Programs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-a-unix-system">Visualizing a Unix system</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#processes-and-executables">Processes and Executables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful">1.2. Useful</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unix">1.3. UNIX</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-operating-system-built-by-programmers-for-programmers">1.3.1. An operating System Built by Programmers for Programmers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-kernel">1.3.2. The Kernel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-programs">1.3.3. User Programs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-a-unix-system">1.3.4. Visualizing a Unix system</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#processes-and-executables">1.3.4.1. Processes and Executables</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-to-studying-unix">Benefits to studying UNIX</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-to-studying-unix">1.3.5. Benefits to studying UNIX</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bottomline">Bottomline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bottomline">1.4. Bottomline</a></li>
 </ul>
   </nav></div>
 
