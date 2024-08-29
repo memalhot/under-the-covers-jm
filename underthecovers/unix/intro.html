@@ -460,22 +460,12 @@ document.write(`
 <section id="computer">
 <h2><span class="section-number">1.1. </span>Computer<a class="headerlink" href="#computer" title="Link to this heading">#</a></h2>
 <p>Today a computer can take many forms from desktop Personal Computers (PCs), laptops, mobile phones, tablets, building scale super-computers, etc.  In some sense the defining property we care about is that the device supports a classic model for programming it – we call this model the von Neumann architecture.  We will discuss this model in much more detail when we start considering exactly how software and hardware work with respect to <a class="reference internal" href="#../assembly/intro.ipynb"><span class="xref myst">assembly language</span></a>.   Below illustrates how we will visually represent a generic von Neumann based computer and summarizes what we need to know for now.</p>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">htmlFig</span><span class="p">(</span><span class="s2">&quot;../images/SLS_TheMachine.png&quot;</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">2</span>               <span class="n">align</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span>               <span class="n">margin</span><span class="o">=</span><span class="s2">&quot;auto 3em 0 auto&quot;</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span>               <span class="n">width</span><span class="o">=</span><span class="s2">&quot;100%&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;fig:vnm&quot;</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span>              <span class="n">caption</span><span class="o">=</span><span class="s2">&quot;Figure: Our illustration of a von Neumann computer&quot;</span><span class="p">)))</span>
-
-<span class="ne">NameError</span>: name &#39;htmlFig&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
+<figure class="align-center" id="id1">
+<img alt="Von Neummann Computer" src="unix/(../images/SLS_TheMachine.png)" />
+<figcaption>
+<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">Our illustration of a von Neumann computer</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p><strong>Central Processing Unit (CPU):</strong></p>
 <ul class="simple">
 <li><p>the smart bits that “execute” the instructions of software, also called the processor.</p></li>
@@ -572,6 +562,32 @@ UNIX and it’s children literally make our digital world go around and will lik
 <section id="visualizing-a-unix-system">
 <h3><span class="section-number">1.3.4. </span>Visualizing a Unix system<a class="headerlink" href="#visualizing-a-unix-system" title="Link to this heading">#</a></h3>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">htmlFig</span><span class="p">(</span><span class="s2">&quot;../images/UnixRunning.png&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>              <span class="n">caption</span><span class="o">=</span><span class="s2">&quot;Figure: Running Unix system.&quot;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span>              <span class="n">width</span><span class="o">=</span><span class="s2">&quot;50%&quot;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span>              <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;fig:runningunix&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>              <span class="n">margin</span><span class="o">=</span><span class="s2">&quot;auto auto auto 1.5em&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;&#39;&#39;          </span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="s1"> We visualized a running Unix system with the Hardware of the computer at the bottom, shaded </span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s1"> blue, and the running software, shaded in green, above it.  The Unix Kernel is a persistent </span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s1"> program that forms the foundation for launching and running instances of user programs and </span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span><span class="s1"> is illustrated as the green oval labeled &quot;UNIX Kernel&quot;.  The smaller green circles represent </span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span><span class="s1"> the currently running programs that have been started. Each time a program is started we </span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span><span class="s1"> visualize a new circle representing a new running instances of the program.   In the diagram </span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span><span class="s1"> each is labeled with the program that was used to start it. Each instance is independent and </span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span><span class="s1"> has its own &quot;life-time&quot;.   If a specific running instance of a program ends, crashes or is </span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="s1"> terminated (killed) by the user we would remove its circle.  So while in reality we can&#39;t </span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="s1"> physically see the programs running we none the less think of the running software as forming </span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span><span class="s1"> a world of its own, inside the machine, with the kernel enabling its construction and management.</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span><span class="s1"> &#39;&#39;&#39;</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;htmlFig&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <section id="processes-and-executables">
 <h4><span class="section-number">1.3.4.1. </span>Processes and Executables<a class="headerlink" href="#processes-and-executables" title="Link to this heading">#</a></h4>
