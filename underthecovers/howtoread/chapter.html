@@ -476,10 +476,11 @@ what the problem was.  If possible include a screenshot.</p>
 </section>
 <section id="warning-danger">
 <h2>WARNING – DANGER<a class="headerlink" href="#warning-danger" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p style="background-color:tomato;">  <b>The files you create within your Linux server are NOT PERMANENT!</b>  In other words you cannot rely on the files to be there if the server crashes for some reason, it gets shutdown due to inactivity, or you purposefully shut it down.   You must frequently save your work to an external service like <a href="https://github.com/">https://github.com/</a> or  <a href="https://gitlab.com/">https://gitlab.com/</a>.
-</div></blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><b>The files you create within your Linux server are NOT PERMANENT!</b>  In other words you cannot rely on the files to be there if the server crashes for some reason, it gets shutdown due to inactivity, or you purposefully shut it down.   You must frequently save your work to an external service like <a href="https://github.com/">https://github.com/</a> or  <a href="https://gitlab.com/">https://gitlab.com/</a>.</p>
 </p>
+</div>
 </section>
 <section id="step-0-start-your-server">
 <h2>Step 0: Start your server<a class="headerlink" href="#step-0-start-your-server" title="Link to this heading">#</a></h2>
@@ -598,8 +599,11 @@ htmlFig("[[{'src': 'images/howto/howto2.png', 'cellwidth': '33.33%'}, {'src': 'i
 <p>Rather than letting the system destroy your environment arbitrarily it is best for you to shut it down yourself when you are done your work, see below.</p>
 <section id="warning">
 <h3>WARNING<a class="headerlink" href="#warning" title="Link to this heading">#</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>Given the temporary nature of the environment you should be aware that <strong>ANY FILES YOU HAVE WITHIN IT WILL BE DESTROYED</strong> when it shuts down.  When you start a new one it will reset to a fresh clean state.</p>
 <p>To save your work you must push it to an external git service such as <a class="reference external" href="http://github.com">github.com</a> or <a class="reference external" href="http://gitlab.com">gitlab.com</a> (for those of you taking CS210 see the course related howto on Piazza).</p>
+</div>
 </section>
 </section>
 <section id="shutting-down-your-server">
