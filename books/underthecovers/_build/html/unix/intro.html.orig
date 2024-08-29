@@ -523,6 +523,12 @@ UNIX on the other hand assumes that its users are primarily programmers.  Its de
 <p>The <a class="reference external" href="https://www.opengroup.org/membership/forums/platform/unix">UNIX</a> operating system was built by master programmers who valued programmability and productivity.  In some sense learning to work on the UNIX systems is a right of passage that not only teaches you how to be productive on a computer running the UNIX operating system but teaches you to think and act like a programmer.</p>
 <p>Given its programming focus UNIX is organized around two categories of software – kernel and user.  The kernel is a component of the UNIX that users of UNIX do not directly interact with.  It is the core software that is used to manage the various devices of the computer and construct an environment that allows programmers to create new users programs.  The idea is that very little is really built into UNIX rather its users are encouraged to write lots of small programs that build on the functionality of the kernel to do useful things.  The kernel’s main job is to provide the ability to run new program, provide those programs with access to the hardware, and provide common ways for programs to interconnect, work together.</p>
 <p>I know this all sounds a bit recursive – welcome to computer science.  As we start interacting with UNIX it will make more sense.</p>
+<div class="{History}Unix docutils">
+<p><a class="reference external" href="https://www.bell-labs.com/about/history/innovation-stories/50-years-unix/#gref">50 Years of Unix</a> <br>
+The people and its history are a fascinating journey into how we have gotten to where we are today. <br>
+<a class="reference external" href="https://spectrum.ieee.org/the-strange-birth-and-long-life-of-unix#toggle-gdpr">The Strange birth and long life of Unix</a> <br>
+UNIX and it’s children literally make our digital world go around and will likely continue to do so for the quite some time.</p>
+</div>
 <p><a id='UnixKernel_sec'></a></p>
 </section>
 <section id="the-kernel">
@@ -545,8 +551,11 @@ UNIX on the other hand assumes that its users are primarily programmers.  Its de
 </ul>
 </li>
 </ol>
-<p><a class="reference internal" href="images/warning.svg"><img alt="images/warning.svg" class="align-left" src="images/warning.svg" width="60" /></a> A critical point of the Unix design: <strong>Humans do not and cannot directly interact with the kernel, only User Programs can interact with the kernel by invoking kernel functions</strong>.  This design promotes and encourages that the rest of the operating systems and for that matter all other software be viewed as separated from the kernel.  As such it encourages a building block approach where several alternatives for any given OS feature, like human interface programs, can be added, supported and explored while the kernel remains without change.  The goal is to empower programmers to grow and extend the system in a natural and seamless way.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A critical point of the Unix design: <strong>Humans do not and cannot directly interact with the kernel, only User Programs can interact with the kernel by invoking kernel functions</strong>.  This design promotes and encourages that the rest of the operating systems and for that matter all other software be viewed as separated from the kernel.  As such it encourages a building block approach where several alternatives for any given OS feature, like human interface programs, can be added, supported and explored while the kernel remains without change.  The goal is to empower programmers to grow and extend the system in a natural and seamless way.</p>
 <p>It is worth noting most modern operating systems have adopted this basic organization where there is a base kernel component and a large collection of pre-packaged user programs.</p>
+</div>
 <p><a id='UnixUser_sec'></a></p>
 </section>
 <section id="user-programs">
