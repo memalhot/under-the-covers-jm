@@ -461,7 +461,7 @@ document.write(`
 <h2><span class="section-number">1.1. </span>Computer<a class="headerlink" href="#computer" title="Link to this heading">#</a></h2>
 <p>Today a computer can take many forms from desktop Personal Computers (PCs), laptops, mobile phones, tablets, building scale super-computers, etc.  In some sense the defining property we care about is that the device supports a classic model for programming it – we call this model the von Neumann architecture.  We will discuss this model in much more detail when we start considering exactly how software and hardware work with respect to <a class="reference internal" href="#../assembly/intro.ipynb"><span class="xref myst">assembly language</span></a>.   Below illustrates how we will visually represent a generic von Neumann based computer and summarizes what we need to know for now.</p>
 <figure class="align-center" id="id1">
-<img alt="Von Neummann Computer" src="unix/images/SLS_TheMachine.png)" />
+<img alt="Von Neummann Computer" src="unix/images/src/SLS_TheMachine.png)" />
 <figcaption>
 <p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">Our illustration of a von Neumann computer</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
