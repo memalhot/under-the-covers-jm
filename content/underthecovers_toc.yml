@@ -1,7 +1,7 @@
 format: jb-book
 root: underthecovers_intro
 parts:
-- caption: 'Part 1'
+- caption: 'How to Read This Book'
   numbered: false
   chapters:
   - file: howtoread/chapter
