@@ -185,6 +185,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Operating Systems and UNIX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="terminal.html">2. What is a Terminal and why do we still use them?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="files.html">3. Organizing and Managing Information as a Tree of Files and Directories</a></li>
 </ul>
 
     </div>
@@ -539,7 +540,7 @@ document.write(`
 <li><p>the kernel ensures that these functions,  behaves consistently across different hardware</p></li>
 </ul>
 </li>
-<li><p>these functions hides the details and complexity of the hardware devices from the programs and thus the programmers who wrote them.  For example a Unix kernel provides programs with the generic abstraction of a <a class="reference internal" href="#../unix/files.ipynb"><span class="xref myst">“file”</span></a> that allows programs to create, store and recall data on storage devices without ever needing to know any details of the devices themselves.</p></li>
+<li><p>these functions hides the details and complexity of the hardware devices from the programs and thus the programmers who wrote them.  For example a Unix kernel provides programs with the generic abstraction of a <a class="reference internal" href="files.html"><span class="std std-doc">“file”</span></a> that allows programs to create, store and recall data on storage devices without ever needing to know any details of the devices themselves.</p></li>
 </ul>
 </li>
 </ol>
