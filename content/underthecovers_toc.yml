@@ -11,3 +11,4 @@ parts:
   - file: unix/intro
   - file: unix/terminal
   - file: unix/files
+  - file: unix/shellintro
