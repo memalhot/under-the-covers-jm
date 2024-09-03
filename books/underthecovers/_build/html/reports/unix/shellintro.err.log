@@ -1,4 +1,17 @@
 Traceback (most recent call last):
+  File "/home/memalhot/.local/lib/python3.12/site-packages/nbclient/client.py", line 782, in _async_poll_for_reply
+    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/memalhot/.local/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 198, in ensure_async
+    result = await obj
+             ^^^^^^^^^
+  File "/home/memalhot/.local/lib/python3.12/site-packages/jupyter_client/channels.py", line 315, in get_msg
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
   File "/home/memalhot/.local/lib/python3.12/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
   File "/home/memalhot/.local/lib/python3.12/site-packages/nbclient/client.py", line 1314, in execute
@@ -12,51 +25,20 @@ Traceback (most recent call last):
            ^^^^^^^^^^^^^^^
   File "/home/memalhot/.local/lib/python3.12/site-packages/nbclient/client.py", line 709, in async_execute
     await self.async_execute_cell(
-  File "/home/memalhot/.local/lib/python3.12/site-packages/nbclient/client.py", line 1062, in async_execute_cell
-    await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/home/memalhot/.local/lib/python3.12/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
-    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
-nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
-------------------
-%run -i ../python/common.py
-publish=True
-
-if not publish:
-    # cleanup any old state
-    bashCmds('''[[ -d mydir ]] && rm -rf mydir
-    [[ -a myfile ]] && rm myfile
-    [[ -a errors ]] && rm errors 
-    [[ -a mydate ]] && rm mydate
-    [[ -a mynewdir ]] && rm -rf mynewdir
-    [[ -a anotherfile ]] && rm anotherfile
-    [[ -a mybin ]] && rm -rf  mybin
-    [[ -a myinfo ]] && rm myinfo''')
-else:
-    bashCmds('''rm -rf ~/*''')
-    
-closeAllOpenTtySessions()
-bash = BashSession()
-
-generated="~/myfile ~/errors ~/mydate ~/mydir ~/mynewdir ~/out"
-
-# remember to avoid something having a history entry put a space at the beginning of the line
-#bash.run(" history")
-------------------
-
-
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[1], line 15[0m
-[1;32m      6[0m     bashCmds([38;5;124m'''[39m[38;5;124m[[ -d mydir ]] && rm -rf mydir[39m
-[1;32m      7[0m [38;5;124m    [[ -a myfile ]] && rm myfile[39m
-[1;32m      8[0m [38;5;124m    [[ -a errors ]] && rm errors [39m
-[0;32m   (...)[0m
-[1;32m     12[0m [38;5;124m    [[ -a mybin ]] && rm -rf  mybin[39m
-[1;32m     13[0m [38;5;124m    [[ -a myinfo ]] && rm myinfo[39m[38;5;124m'''[39m)
-[1;32m     14[0m [38;5;28;01melse[39;00m:
-[0;32m---> 15[0m     [43mbashCmds[49m([38;5;124m'''[39m[38;5;124mrm -rf ~/*[39m[38;5;124m'''[39m)
-[1;32m     17[0m closeAllOpenTtySessions()
-[1;32m     18[0m bash [38;5;241m=[39m BashSession()
-
-[0;31mNameError[0m: name 'bashCmds' is not defined
+  File "/home/memalhot/.local/lib/python3.12/site-packages/nbclient/client.py", line 1005, in async_execute_cell
+    exec_reply = await self.task_poll_for_reply
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/memalhot/.local/lib/python3.12/site-packages/nbclient/client.py", line 806, in _async_poll_for_reply
+    error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/memalhot/.local/lib/python3.12/site-packages/nbclient/client.py", line 856, in _async_handle_timeout
+    raise CellTimeoutError.error_from_timeout_and_cell(
+nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
+The message was: Cell execution timed out.
+Here is a preview of the cell contents:
+-------------------
+['%run -i ../python/common.py', 'publish=True', '', 'if not publish:', '    # cleanup any old state']
+...
+['', 'generated="~/myfile ~/errors ~/mydate ~/mydir ~/mynewdir ~/out"', '', '# remember to avoid something having a history entry put a space at the beginning of the line', '#bash.run(" history")']
+-------------------
 

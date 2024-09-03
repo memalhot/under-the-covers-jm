@@ -618,7 +618,7 @@ document.write(`
 <p>As discussed the core functionality of the Unix operating system is implemented by the Kernel. However, the Kernel does not have any support for humans to directly interact with it. The primary responsibility of the kernel is to provide utilities that simplify the writing and running of application/user programs. This is where the shell comes in. The shell acts as our primary point of contact/interface, not only to the kernel, but also to all other installed programs.</p>
 <section id="system-calls">
 <h3><span class="section-number">4.1.1. </span>System calls<a class="headerlink" href="#system-calls" title="Link to this heading">#</a></h3>
-<img alt="images/syscalls.png" src="images/syscalls.png" />
+<img alt="../_images/syscalls.png" src="../_images/syscalls.png" />
 <p>The UNIX kernel provides a large set of functions that can be called by a running program.  Remember, on UNIX we call a running program a “process”. The kernel functions that a process can request are called “system calls”. In the next part of this book, we will look in more detail at how a process can issue a request for the kernel to execute a system call.  For the moment, it is sufficient to know that each system call, which we identify by names, can only be requested by an already running program. When a process makes a request to execute a system call, it can pass arguments to the system call. Similarly, on completion of the system call the kernel can return values back to the process. Operating system kernels can provide hundreds of system calls. In the diagram above, the white labeled boxes within the kernel oval illustrate a small subset of important UNIX kernel system calls.</p>
 <p>The UNIX kernel, through its system calls, provides the ability for a process to:</p>
 <ol class="arabic simple">
@@ -627,7 +627,7 @@ document.write(`
 <li><p>manage and work with Input and Output devices</p></li>
 <li><p>communicate between processes, both on the same computer and across computers</p></li>
 </ol>
-<img style="float: right; margin: 0em 0em 0px 0px;" width="50%" src="../images/shellsystemcalls2.png">
+<img style="float: right; margin: 0em 0em 0px 0px;" width="50%" src="../images/src/syscalls2.png">
 A core job of the shell is to be the first running process a human user of a computer can use to interact with the kernel to get things done.  In other words, a shell has been built to let a human make use of the Operating System kernel, which itself has been written to help us make use of the computer hardware.  It does this by: 1) accepting human oriented commands from a user, 2) executing kernel system calls to get the work of the commands done, and 3) sending a response back.  The shell includes the ability to locate other executable programs and launch new processes from them.    
 <p>The graphical human-computer interfaces that we use on our smart phones, laptops and desktop computers are designed to utilize touch or pointing devices (like a mouse). These interfaces allow us to find and launch programs, open files, and navigate the computer to do our daily work.  The primary goal of such interfaces is ease of use.  The shell, however, is text based, and is designed with programmers in mind.  Specifically, its syntax and commands are designed in such a way that they form an “extensible” programming language.  Here, extensible refers to the ability for users to add to and extend it with ease. This language allows a human user to not only use the facilities of the kernel, but also to automate their daily tasks, and efficiently conduct the various forms of data processing programmers often do.</p>
 </section>
@@ -642,6 +642,16 @@ A core job of the shell is to be the first running process a human user of a com
 <h3><span class="section-number">4.2.2. </span>man bash<a class="headerlink" href="#man-bash" title="Link to this heading">#</a></h3>
 <p>It is a Unix tradition that programs installed on the system, like Bash, include documentation on how they are used.  To access the manual pages you use the <code class="docutils literal notranslate"><span class="pre">man</span></code> program eg. <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">man</span></code> would bring up the documentation about the manual itself.  So <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">bash</span></code> will bring up the manual page for the bash shell.  You can find detailed coverage of the functionality and syntax of bash in the manual.  After we cover some basics it will be much easier to read and understand the Bash manual page, as it assumes that you understand some basic UNIX and generic shell concepts.</p>
 <div class="cell tag_remove-input tag_output_scroll docutils container">
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">bash</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;man bash&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s1">&#39;20em&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;bash&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <section id="info-bash">
 <h4><span class="section-number">4.2.2.1. </span>info bash<a class="headerlink" href="#info-bash" title="Link to this heading">#</a></h4>
@@ -668,7 +678,7 @@ A core job of the shell is to be the first running process a human user of a com
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>While you are learning how to work with bash it can be really useful to keep a terminal open in which you keep the <code class="docutils literal notranslate"><span class="pre">info</span></code> page for bash open while you use another terminal shell session to do your exploring.</p>
-<img alt="images/screenshot-bash-info.png" src="images/screenshot-bash-info.png" />
+<img alt="../_images/bashinfo.png" src="../_images/bashinfo.png" />
 </div>
 </section>
 </section>
