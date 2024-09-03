@@ -769,7 +769,7 @@ htmlFig("[{'src': '../images/shellexecuteflowchart.png', 'bgcolor': 'white', 'bo
 <figure class="align-default" id="id2">
 <img alt="parse" src="../_images/parse.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 4.1 </span><span class="caption-text">Figure: Flow chart of command line processing steps.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.1 </span><span class="caption-text">Flow chart of command line processing steps.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>When the shell receives a command line, it goes through a series of steps to process it.  The rules of this processing define what is called the <a class="reference external" href="https://man7.org/linux/man-pages/man1/bash.1.html#SHELL_GRAMMAR">Shell Grammar</a>.  The Shell Grammar and builtin commands form an entire programming language.  Programs written in this language are called Shell Scripts, and are used extensively to automate all sorts of tasks.  Over the years, one learns more and more subtle aspects of the shell grammar and its usage. While it is possible to use the shell without knowing its underlying grammar, having a working knowledge can really help in understanding why the shell behaves the way it does, and in demystifying its somewhat strange syntax.</p>
@@ -1423,8 +1423,12 @@ See <a class="reference external" href="https://www.gnu.org/software/bash/manual
 <p>The way this step works is critical to the flexibility and power the shell provides. It is why, as a programmer, you can easily extend and customize the UNIX command line environment with the programs and scripts you write.</p>
 </div>
 <p>Let’s recall the flow chart of command line processing, focusing now on the sub-steps of command execution.</p>
-<div class="cell tag_remove-input docutils container">
-</div>
+<figure class="align-default" id="id3">
+<img alt="parse" src="../_images/parse.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 4.2 </span><span class="caption-text">Flow chart of command line processing steps.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Let’s take a closer look at our example command line. The following is an outline of how execution would proceed in terms of the flowchart of sub-steps.</p>
 <ul>
 <li><p><em>DECISION 1:</em>  The command name <code class="docutils literal notranslate"><span class="pre">ls</span></code> does not have a <code class="docutils literal notranslate"><span class="pre">/</span></code> in it, so we would proceed from decision one to decision two.</p></li>
