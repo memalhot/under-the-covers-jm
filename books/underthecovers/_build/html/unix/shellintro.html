@@ -63,6 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'unix/shellintro';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Introduction: Assembly Programming" href="../assembly/intro.html" />
     <link rel="prev" title="3. Organizing and Managing Information as a Tree of Files and Directories" href="files.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -188,6 +189,10 @@
 <li class="toctree-l1"><a class="reference internal" href="terminal.html">2. What is a Terminal and why do we still use them?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="files.html">3. Organizing and Managing Information as a Tree of Files and Directories</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">4. The Shell - Part I: Having an ASCII conversation with the OS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">THE BELLY OF THE BEAST: THE VON NEUMMAN ARCHITECTURE AND ASSEMBLY PROGRAMMING</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../assembly/intro.html">5. Introduction: Assembly Programming</a></li>
 </ul>
 
     </div>
@@ -606,7 +611,68 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="the-shell-part-i-having-an-ascii-conversation-with-the-os">
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> -i ../python/common.py
+<span class="n">publish</span><span class="o">=</span><span class="kc">True</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">publish</span><span class="p">:</span>
+    <span class="c1"># cleanup any old state</span>
+    <span class="n">bashCmds</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;[[ -d mydir ]] &amp;&amp; rm -rf mydir</span>
+<span class="s1">    [[ -a myfile ]] &amp;&amp; rm myfile</span>
+<span class="s1">    [[ -a errors ]] &amp;&amp; rm errors </span>
+<span class="s1">    [[ -a mydate ]] &amp;&amp; rm mydate</span>
+<span class="s1">    [[ -a mynewdir ]] &amp;&amp; rm -rf mynewdir</span>
+<span class="s1">    [[ -a anotherfile ]] &amp;&amp; rm anotherfile</span>
+<span class="s1">    [[ -a mybin ]] &amp;&amp; rm -rf  mybin</span>
+<span class="s1">    [[ -a myinfo ]] &amp;&amp; rm myinfo&#39;&#39;&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">bashCmds</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;rm -rf ~/&#39;&#39;&#39;</span><span class="p">)</span>
+    
+<span class="n">closeAllOpenTtySessions</span><span class="p">()</span>
+<span class="n">bash</span> <span class="o">=</span> <span class="n">BashSession</span><span class="p">()</span>
+
+<span class="n">generated</span><span class="o">=</span><span class="s2">&quot;~/myfile ~/errors ~/mydate ~/mydir ~/mynewdir ~/out&quot;</span>
+
+<span class="c1"># remember to avoid something having a history entry put a space at the beginning of the line</span>
+<span class="c1">#bash.run(&quot; history&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">15</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">bashCmds</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;[[ -d mydir ]] &amp;&amp; rm -rf mydir</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s1">     [[ -a myfile ]] &amp;&amp; rm myfile</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s1">     [[ -a errors ]] &amp;&amp; rm errors </span>
+<span class="s1">   (...)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span><span class="s1">     [[ -a mybin ]] &amp;&amp; rm -rf  mybin</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span><span class="s1">     [[ -a myinfo ]] &amp;&amp; rm myinfo&#39;&#39;&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">15</span>     <span class="n">bashCmds</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;rm -rf ~/&#39;&#39;&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">closeAllOpenTtySessions</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="n">bash</span> <span class="o">=</span> <span class="n">BashSession</span><span class="p">()</span>
+
+<span class="nn">File ~/underthecovers/underthecovers/content/python/common.py:857,</span> in <span class="ni">bashCmds</span><span class="nt">(cmds, cwd, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">855</span> <span class="k">def</span> <span class="nf">bashCmds</span><span class="p">(</span><span class="n">cmds</span><span class="p">,</span> <span class="n">cwd</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;HOME&#39;</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">856</span>     <span class="c1">#CAUSING AN ISSUE</span>
+<span class="ne">--&gt; </span><span class="mi">857</span>     <span class="n">output</span><span class="p">,</span> <span class="n">session</span> <span class="o">=</span> <span class="n">bashSessionCmds</span><span class="p">(</span><span class="n">cmds</span><span class="o">=</span><span class="n">cmds</span><span class="p">,</span> <span class="n">cwd</span><span class="o">=</span><span class="n">cwd</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">858</span>     <span class="k">return</span> <span class="n">renderTtySessionOutput</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~/underthecovers/underthecovers/content/python/common.py:795,</span> in <span class="ni">bashSessionCmds</span><span class="nt">(cmds, cwd, bufsize, wait, rows, cols, session, close, ignoreoutput, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">792</span>     <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span> 
+<span class="g g-Whitespace">    </span><span class="mi">794</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">795</span>     <span class="n">read_fds</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">error_fds</span> <span class="o">=</span> <span class="n">select</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="n">master</span><span class="p">],[],[</span><span class="n">master</span><span class="p">])</span>  
+<span class="g g-Whitespace">    </span><span class="mi">796</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">error_fds</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">797</span>         <span class="n">kill</span> <span class="o">=</span> <span class="kc">True</span><span class="p">;</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="the-shell-part-i-having-an-ascii-conversation-with-the-os">
 <h1><span class="section-number">4. </span>The Shell - Part I: Having an ASCII conversation with the OS<a class="headerlink" href="#the-shell-part-i-having-an-ascii-conversation-with-the-os" title="Link to this heading">#</a></h1>
 <p>As we read in the Unix <a class="reference internal" href="intro.html"><span class="std std-doc">introduction</span></a> a key feature of Unix is its command line interface that was developed for <a class="reference internal" href="terminal.html"><span class="std std-doc">ASCII terminals</span></a> devices. Our goal in this chapter is to understand the general model of the shell and how to start working in the terminal environment.  If you have not done so be sure to have read the sections on the Unix <a class="reference internal" href="intro.html#UnixKernel_sec"><span class="std std-ref">Kernel</span></a>, <a class="reference internal" href="intro.html#UnixUser_sec"><span class="std std-ref">User Programs</span></a>, how we <a class="reference internal" href="intro.html#UnixViz_sec"><span class="std std-ref">visualize a running Unix system</span></a>, the introduction to <a class="reference internal" href="terminal.html#TerminalEmulators_sec"><span class="std std-ref">Terminal Emulators</span></a> and the chapter introducing <a class="reference internal" href="files.html"><span class="std std-doc">Files and Directories</span></a>.</p>
 <div class="admonition tip">
@@ -2344,6 +2410,15 @@ There are two additional standard ones that a UNIX kernel maintains for every pr
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title"><span class="section-number">3. </span>Organizing and Managing Information as a Tree of Files and Directories</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../assembly/intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Introduction: Assembly Programming</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

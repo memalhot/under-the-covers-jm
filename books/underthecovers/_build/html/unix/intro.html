@@ -188,6 +188,10 @@
 <li class="toctree-l1"><a class="reference internal" href="files.html">3. Organizing and Managing Information as a Tree of Files and Directories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shellintro.html">4. The Shell - Part I: Having an ASCII conversation with the OS</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">THE BELLY OF THE BEAST: THE VON NEUMMAN ARCHITECTURE AND ASSEMBLY PROGRAMMING</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../assembly/intro.html">5. Introduction: Assembly Programming</a></li>
+</ul>
 
     </div>
 </nav></div>
@@ -463,7 +467,7 @@ document.write(`
 <p>We call the collection of software that we use to make a “computer”  “useful” an operating system.  But what exactly does this mean?</p>
 <section id="computer">
 <h2><span class="section-number">1.1. </span>Computer<a class="headerlink" href="#computer" title="Link to this heading">#</a></h2>
-<p>Today a computer can take many forms from desktop Personal Computers (PCs), laptops, mobile phones, tablets, building scale super-computers, etc.  In some sense the defining property we care about is that the device supports a classic model for programming it – we call this model the von Neumann architecture.  We will discuss this model in much more detail when we start considering exactly how software and hardware work with respect to <a class="reference internal" href="#../assembly/intro.ipynb"><span class="xref myst">assembly language</span></a>.   Below illustrates how we will visually represent a generic von Neumann based computer and summarizes what we need to know for now.</p>
+<p>Today a computer can take many forms from desktop Personal Computers (PCs), laptops, mobile phones, tablets, building scale super-computers, etc.  In some sense the defining property we care about is that the device supports a classic model for programming it – we call this model the von Neumann architecture.  We will discuss this model in much more detail when we start considering exactly how software and hardware work with respect to <a class="reference internal" href="../assembly/intro.html"><span class="std std-doc">assembly language</span></a>.   Below illustrates how we will visually represent a generic von Neumann based computer and summarizes what we need to know for now.</p>
 <figure class="align-default" id="id1">
 <img alt="Von Neummann Computer" src="../images/src/SLS_TheMachine.png" />
 <figcaption>
@@ -560,7 +564,6 @@ document.write(`
 <li><p>Other: There is a highly variable collection of software that form the rest of the user programs.  This body largely depending on the OS and its intended target audience.   In the case of OS’s that are geared to personal computers this set of software includes:  media programs, web-browsers, productivity applications and more.  While not always standard, the tools for developing new programs also fall in this category.   These include program editors, programming languages and debuggers.  A hallmark of Unix is the rich body of programming tools associated with it (including the tools to rebuild the kernel itself).</p></li>
 </ol>
 <p>One of the distinguishing feature of Unix is its standard user command line programs that are geared to programmers (<a class="reference external" href="https://en.wikipedia.org/wiki/List_of_Unix_commands">https://en.wikipedia.org/wiki/List_of_Unix_commands</a>).  While they lack graphical interfaces and are <a class="reference internal" href="terminal.html#ASCII_sec"><span class="std std-ref">ASCII</span></a>/command line oriented they form a very rich and powerful set of building blocks that allow a knowledgeable programmer to rapidly create turnkey solutions including the; text searching and transformation, data wrangling, automation, as well as the development and debugging of large applications.</p>
-<p><a id='UnixViz_sec'></a></p>
 </section>
 <section id="visualizing-a-unix-system">
 <h3><span class="section-number">1.3.4. </span>Visualizing a Unix system<a class="headerlink" href="#visualizing-a-unix-system" title="Link to this heading">#</a></h3>
