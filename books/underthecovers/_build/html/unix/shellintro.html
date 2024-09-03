@@ -683,7 +683,7 @@ A core job of the shell is to be the first running process a human user of a com
 </section>
 <section id="line-oriented-conversation">
 <h2><span class="section-number">4.4. </span>Line oriented conversation<a class="headerlink" href="#line-oriented-conversation" title="Link to this heading">#</a></h2>
-<img style="float: left; margin: 0px 10px 0px 0px;" width="30%" src="../images/src/shellloopcartoon.png">
+<img style="float: left; margin: 0px 10px 0px 0px;" width="30%" src="../images/src/com.png">
 The way we interact with the shell can be thought of as a structured, interactive, "conversation". The conversation is a series of back and forth exchanges. We, the user, type in a request in the form of a "command line". In response, the shell takes some actions, and generates a particular response, as byte values, which are sent back to the terminal.  The terminal translates the response byte values into ASCII characters, displaying/printing the appropriate images of the ascii characters to the screen for the user to read.   
 <section id="lines">
 <h3><span class="section-number">4.4.1. </span>Lines<a class="headerlink" href="#lines" title="Link to this heading">#</a></h3>
@@ -697,7 +697,7 @@ The way we interact with the shell can be thought of as a structured, interactiv
 </section>
 <section id="the-prompt">
 <h3><span class="section-number">4.4.2. </span>The Prompt<a class="headerlink" href="#the-prompt" title="Link to this heading">#</a></h3>
-<img style="float: right; margin: 0px 0px 0px 10px;" width="50%" src="../images/UnixL01_SHCHT/04SHLLChat.png">
+<img style="float: right; margin: 0px 0px 0px 10px;" width="50%" src="../images/src/prompt.png">
 We now know that our interaction with the shell largely resembles a conversation, and similar to a conversation, we need some way to determine that the other party is ready to listen. The "prompt string," or simply, the "prompt," is the shell's way of visually telling us it is ready to talk. The prompt is a configurable sequence of characters, beginning on a new line, indicating to us that the shell is ready to recieve a line. When a new connection is established, it sends the prompt to the terminal so that we know that it is ready for the session/conversation to begin.  The classic prompt string is often either the dollar symbol, `$` or greater than sign `>` followed by a single space character.  In our illustrations, and in the default configuration we use, the prompt is set to be the classic dollar sign followed by a space.
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -712,8 +712,7 @@ If you are interested in the details use the following <code class="docutils lit
 Perhaps the simplest thing we can do is send it an empty line by pressing <em>enter</em> on its own.
 We should find that the terminal will move to the next line, and display the prompt again.
 It may seem silly to examine such a simple exchange, but if we take a moment to think carefully about what is going on behind the scenes, we will find a new level of understanding that will help us to build a more complete mental model of how the shell and terminal interact.</p>
-<div class="cell tag_remove-input docutils container">
-</div>
+<p><img alt="shell line behavior" src="../_images/shellline.png" /></p>
 <p>What happens after we press and release the <em>enter</em> key? The terminal sends - through the Unix kernel - a byte destined to the instance of the shell program that our terminal is virtually connected to.  Precisely, it sends the binary pattern <code class="docutils literal notranslate"><span class="pre">0b00001010</span></code> or in hex <code class="docutils literal notranslate"><span class="pre">0xa</span></code> as the left most sub-figure (A) illustrates.  The <a class="reference internal" href="#fig:shell-blankline"><span class="xref myst">figure</span></a> shows both the <code class="docutils literal notranslate"><span class="pre">\n</span></code> human-readable ASCII symbol, and the underlying byte value.  In other diagrams we might stop showing the byte values and only show the ASCII human-readable symbol.  It is, however, important to remember that under the covers, the terminal and shell are really just exchanging raw binary values that use the ASCII standard to encode the data.  If we were to use special device, such as a <a class="reference external" href="https://en.wikipedia.org/wiki/Logic_analyzer">logic analyzer</a>, to peek at the electical wires that make up the pathways that are transmitting data back and forth between the computer and the terminal, we would find electrical values that represent the binary encoding of the characters being exchanged.</p>
 <p>The middle figure (B), is a cartoon depiction of the shell’s behavior after receiving the blank line. As we have seen, it is programmed to do “nothing”, simply sending the prompt back to the terminal to notify the user that it - the shell - is ready for another command line to be sent.  If you are interested in why the terminal displays a <code class="docutils literal notranslate"><span class="pre">\n</span></code>, causing the prompt sent by the shell to be on the next line of the terminal, read the fyi ECHO box below.</p>
 <div class="admonition tip">
@@ -756,7 +755,7 @@ htmlFig("[{'src': '../images/shellexecuteflowchart.png', 'bgcolor': 'white', 'bo
         <td colspan="1" width="100%" style="padding: 0; margin: 0 0 0 0; background-color:white;">
             <div style="padding: 0; margin: 0 0 0 0;">
               <figure style="padding: 0; margin: 0 0 0 0; width:100%;border: 1px solid green;">
-                   <img src="../images/shellexecuteflowchart.png" width="100%" style="padding: 0; margin: 0;">
+                   <img src="../images/src/parse.png" width="100%" style="padding: 0; margin: 0;">
                 </figure>
             </div>
         </td>
