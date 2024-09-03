@@ -16,3 +16,7 @@ parts:
   numbered: true
   chapters:
   - file: assembly/intro
+- caption: "COURSE SPECIFIC MATERIAL"
+  numbered: true
+  chapters:
+  - file: course/specifics
