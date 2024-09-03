@@ -750,6 +750,7 @@ htmlFig("[{'src': '../images/shellexecuteflowchart.png', 'bgcolor': 'white', 'bo
         caption="Figure: Flow chart of command line processing steps.", 
         captionalign="left")
 -->
+<!----
 <table id="fig:flowchart" align="right" width="65%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; margin: 1em auto 1em 1em">
     <tr style="padding: 0; margin: 0;"> 
         <td colspan="1" width="100%" style="padding: 0; margin: 0 0 0 0; background-color:white;">
@@ -764,6 +765,13 @@ htmlFig("[{'src': '../images/shellexecuteflowchart.png', 'bgcolor': 'white', 'bo
           <i>Figure: Flow chart of command line processing steps.</i> 
     </caption>
 </table>
+---->
+<figure class="align-default" id="id2">
+<img alt="fishy" src="images/src/parse.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 4.1 </span><span class="caption-text">Figure: Flow chart of command line processing steps.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>When the shell receives a command line, it goes through a series of steps to process it.  The rules of this processing define what is called the <a class="reference external" href="https://man7.org/linux/man-pages/man1/bash.1.html#SHELL_GRAMMAR">Shell Grammar</a>.  The Shell Grammar and builtin commands form an entire programming language.  Programs written in this language are called Shell Scripts, and are used extensively to automate all sorts of tasks.  Over the years, one learns more and more subtle aspects of the shell grammar and its usage. While it is possible to use the shell without knowing its underlying grammar, having a working knowledge can really help in understanding why the shell behaves the way it does, and in demystifying its somewhat strange syntax.</p>
 <p>The <a class="reference internal" href="#fig:flowchat"><span class="xref myst">figure</span></a> on the right illustrates the flow of command line processing.  We will be working our way through the various steps in this section.</p>
 <section id="interactive-vs-non-interactive-scripts">
