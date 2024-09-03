@@ -655,7 +655,7 @@ A core job of the shell is to be the first running process a human user of a com
 </div>
 <section id="info-bash">
 <h4><span class="section-number">4.2.2.1. </span>info bash<a class="headerlink" href="#info-bash" title="Link to this heading">#</a></h4>
-<a class="reference internal image-reference" href="images/bashinfoalone.png"><img alt="images/bashinfoalone.png" class="align-left" src="images/bashinfoalone.png" style="width: 30%;" /></a>
+<a class="reference internal image-reference" href="images/bashinfo.png"><img alt="images/bashinfo.png" class="align-left" src="images/bashinfo.png" style="width: 30%;" /></a>
 <p>Another really useful way to read and navigate UNIX documentation and manuals is the <a class="reference external" href="https://en.wikipedia.org/wiki/Info_(Unix)">info</a> documentation system.  Try <code class="docutils literal notranslate"><span class="pre">info</span> <span class="pre">info</span></code> to learn about how to use it.  The advantage of the info system is that it provides a more friendly book like experience compared to the <code class="docutils literal notranslate"><span class="pre">man</span></code> command.  To read the info version of the <code class="docutils literal notranslate"><span class="pre">bash</span></code> documentation try <code class="docutils literal notranslate"><span class="pre">info</span> <span class="pre">bash</span></code>.  To exit from info press the <code class="docutils literal notranslate"><span class="pre">q</span></code> key for quit.</p>
 </section>
 <section id="bash-builtin-help">
@@ -672,8 +672,7 @@ A core job of the shell is to be the first running process a human user of a com
 <section id="terminal-windows-and-the-shell">
 <h3><span class="section-number">4.3.1. </span>Terminal Windows and the Shell<a class="headerlink" href="#terminal-windows-and-the-shell" title="Link to this heading">#</a></h3>
 <p>Today, of course, we rarely use physical terminals anymore.  Rather, on our physical client computers (eg. laptops, desktops, tablets, etc) we can start many terminal emulator windows to establish a shell session for each (see below). Each session will stay active until we exit or close the session and kill the associated shell.  Since each window is connected to its own shell, they represent independent “conversations” in which we can do different things concurrently.</p>
-<div class="cell tag_remove-input docutils container">
-</div>
+<p><img alt="terminal emulator" src="images/sh.png" /></p>
 <p>The important thing is we don’t need to do anything special, simply connecting to the UNIX system via a terminal starts a shell for us to interact with.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -684,7 +683,7 @@ A core job of the shell is to be the first running process a human user of a com
 </section>
 <section id="line-oriented-conversation">
 <h2><span class="section-number">4.4. </span>Line oriented conversation<a class="headerlink" href="#line-oriented-conversation" title="Link to this heading">#</a></h2>
-<img style="background:white; float: left; margin: 0px 10px 0px 0px;" width="30%" src="../images/shellloopcartoon.png">
+<img style="float: left; margin: 0px 10px 0px 0px;" width="30%" src="../images/src/shellloopcartoon.png">
 The way we interact with the shell can be thought of as a structured, interactive, "conversation". The conversation is a series of back and forth exchanges. We, the user, type in a request in the form of a "command line". In response, the shell takes some actions, and generates a particular response, as byte values, which are sent back to the terminal.  The terminal translates the response byte values into ASCII characters, displaying/printing the appropriate images of the ascii characters to the screen for the user to read.   
 <section id="lines">
 <h3><span class="section-number">4.4.1. </span>Lines<a class="headerlink" href="#lines" title="Link to this heading">#</a></h3>
