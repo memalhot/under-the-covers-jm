@@ -5,6 +5,7 @@ import ipywidgets as widgets
 from ipywidgets import interact, fixed, Layout
 import os, requests, pty, re, subprocess, struct, sys, fcntl, termios, select
 #from notebook.app import list_running_servers
+from jupyter_server import serverapp
 import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib import animation
@@ -109,13 +110,13 @@ def mkImgsBox(dir,files=[]):
 
 def files_to_imgArray(dir, files=[]):
     if len(files)==0:
-        files=os.listdir(dir)
+        files=os.listdir(dir);
 #        print(files)
         
-    imgs = []
+    imgs = [];
     for f in files:
         imgs.append(plt.imread(dir + "/" + f))
-    return imgs
+    return imgs;
 
 def html_file(file):
     text_file = open(file, "r")
@@ -134,7 +135,7 @@ def mkImgsAnimateBox(dir, files=[], dpi=100.0, xpixels=0, ypixels=0, force=False
         return html_file(dir + "/" + saveto)
 
     if os.path.exists(dir + "/" + saveto):
-        os.remove(dir + "/" + saveto)
+        os.remove(dir + "/" + saveto);
         
     imgs=files_to_imgArray(dir, files)
     if (xpixels==0):
@@ -281,7 +282,7 @@ def displayBytes(bytes=[[0x00]],
     # have attempted to support specifiy the number of bits
     # but not sure it really works will need to be tested
     if numbits<sizeinbits:
-        count=sizeinbits
+        count=sizeinbits;
     else:
         count=numbits
   
@@ -379,7 +380,7 @@ def displayBytes(bytes=[[0x00]],
             ('margin-left', 'auto'),
             ('margin-right', 'auto')
             ]
-        body.set_table_styles([{'selector': '', 'props' : margins }], overwrite=False)
+        body.set_table_styles([{'selector': '', 'props' : margins }], overwrite=False);
     body= body.to_html()
     body = prehtml + body + posthtml
     if disp:
@@ -407,7 +408,7 @@ def displayStr(str, size="", align=""):
 
 
 def htmlFigTD(img):
-    src=img.get('src')
+    src=img.get('src');
     caption=img.get('caption')
     extratxt=img.get('extratxt')
     border=img.get('border')
@@ -547,7 +548,7 @@ htmlFig("'''+ str(imgs) + '''",
         r = toImgs(r)
         rows.append(r)
         if (len(r)>maxcols):
-            maxcols = len(r)
+            maxcols = len(r);
     
     for r in rows:
         cols=len(r)
@@ -704,7 +705,7 @@ def bashSessionRawWrite(data, session,
         # process errors
         if len(error_fds):
             # print("errors found")
-            break
+            break;
             
         # write data aslong as there is data to write   
         if e<=n and len(write_fds): 
@@ -793,8 +794,8 @@ def bashSessionCmds(cmds, cwd=os.getcwd(), bufsize=4096, wait=True, rows=20, col
     while True:
         read_fds,_,error_fds = select.select([master],[],[master])  
         if len(error_fds):
-            kill = True
-            break
+            kill = True;
+            break;
         if len(read_fds):
             data = os.read(master, bufsize)
             # print("data: ", data)
@@ -849,8 +850,10 @@ def bashSessionClose(session):
 def bashSessionOpen(cwd=os.getenv('HOME'), **kwargs):
     _, session = bashSessionCmds(cmds=[], close=False, cwd=cwd, **kwargs)
     return session
-    
+
+
 def bashCmds(cmds, cwd=os.getenv('HOME'), **kwargs):
+    #CAUSING AN ISSUE
     output, session = bashSessionCmds(cmds=cmds, cwd=cwd, **kwargs)
     return renderTtySessionOutput(output, **kwargs)
 
@@ -935,7 +938,7 @@ def runTermCmd(cmd, cwd=os.getcwd(), bufsize=4096, wait=True, tmout=1.0, rows=20
                 else:
                     break
             else: 
-                break
+                break;
             if not p.returncode == None:
                 break
             

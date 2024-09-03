@@ -4,7 +4,22 @@
 #    2) we customize css to improve layout of cells in the browser window
 #    3) standarize how to display code blocks from a source file
 #
-servers=list(list_running_servers())
+from IPython.core.display import HTML, Markdown, TextDisplayObject, Javascript
+from IPython.display import display, IFrame, Image
+import ipywidgets as widgets
+from ipywidgets import interact, fixed, Layout
+import os, requests, pty, re, subprocess, struct, sys, fcntl, termios, select
+#from notebook.app import list_running_servers
+from jupyter_server import serverapp
+import matplotlib
+import matplotlib.pyplot as plt
+from matplotlib import animation
+import numpy as np
+import pandas as pd
+import time
+import array
+
+servers=list(serverapp.list_running_servers())
 if os.environ.get('JUPYTER_ENABLE_LAB') == 'yes' or len(servers) == 0 or 'UC_SKIPTERMS' in globals():
     # skip using embedded terminals in jupyterlab
     def mkTerm():
@@ -22,7 +37,9 @@ else:
     # get server info so that we can make api calls when runing direclty on a
     # jupyter notebook server
 
-    info=next(list_running_servers())
+    #ITERATOR QUESTION MARK ??/
+
+    info=next(serverapp.list_running_servers())
     # localhost_url used for explicit calls to my server
     localhost_url=info['url']
     api_url=localhost_url + 'api/'
@@ -35,13 +52,14 @@ else:
     # the JPY_API_TOKEN environment variable or JUPYTERHUB_API_TOKEN
     # should exist
     if not api_token:
+        # WE NEED A TOKEN HERE
         api_token = os.environ.get('JPY_API_TOKEN')
 
     if not api_token:
         api_token = os.environ.get('JUPYTERHUB_API_TOKEN')
 
     if not api_token:
-        print("ERROR: unable to deterimine API token");
+        print("ERROR: unable to deterimine API token")
 
 
     # get list of current terminals so that we can reuse this if enough exist 

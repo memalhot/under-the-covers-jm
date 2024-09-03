@@ -12,3 +12,7 @@ parts:
   - file: unix/terminal
   - file: unix/files
   - file: unix/shellintro
+- caption: "THE BELLY OF THE BEAST: THE VON NEUMMAN ARCHITECTURE AND ASSEMBLY PROGRAMMING"
+  numbered: true
+  chapters:
+  - file: assembly/intro
