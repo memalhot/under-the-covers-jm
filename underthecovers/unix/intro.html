@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
@@ -14,39 +14,39 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=2b91c5f0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -56,6 +56,8 @@
     <script src="../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'unix/intro';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -70,23 +72,27 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -108,13 +114,8 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
     </header>
   
 
@@ -138,8 +139,6 @@
         <div class="sidebar-primary-item">
 
   
-    
-  
 
 <a class="navbar-brand logo" href="../underthecovers_intro.html">
   
@@ -161,7 +160,7 @@
 
  <script>
  document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -193,10 +192,11 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">THE BELLY OF THE BEAST: THE VON NEUMMAN ARCHITECTURE AND ASSEMBLY PROGRAMMING</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../assembly/intro.html">6. Introduction: Assembly Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assembly/vonNeumannArchitecture.html">7. The von Neumann Architecture</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">COURSE SPECIFIC MATERIAL</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../course/specifics.html">7. BU CS210 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../course/specifics.html">8. BU CS210 Overview</a></li>
 </ul>
 
     </div>
@@ -212,7 +212,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -221,14 +221,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -253,14 +253,14 @@
       
       <li><a href="https://jupyterhub-opf-jupyterhub.apps.smaug.na.operate-first.cloud/hub/user-redirect/git-pull?repo=https%3A//github.com/jappavoo/coursecontenttemplate&urlpath=lab/tree/coursecontenttemplate/content/unix/intro.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on JupyterHub"
+   title="Launch onJupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="JupyterHub logo" src="../_static/images/logo_jupyterhub.svg">
+    <img src="../_static/images/logo_jupyterhub.svg">
   </span>
 <span class="btn__text-container">JupyterHub</span>
 </a>
@@ -401,10 +401,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -412,14 +412,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -469,15 +469,15 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="operating-systems-and-unix">
-<h1><span class="section-number">1. </span>Operating Systems and UNIX<a class="headerlink" href="#operating-systems-and-unix" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">1. </span>Operating Systems and UNIX<a class="headerlink" href="#operating-systems-and-unix" title="Link to this heading">#</a></h1>
 <p>We call the collection of software that we use to make a “computer”  “useful” an operating system.  But what exactly does this mean?</p>
 <section id="computer">
-<h2><span class="section-number">1.1. </span>Computer<a class="headerlink" href="#computer" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1. </span>Computer<a class="headerlink" href="#computer" title="Link to this heading">#</a></h2>
 <p>Today a computer can take many forms from desktop Personal Computers (PCs), laptops, mobile phones, tablets, building scale super-computers, etc.  In some sense the defining property we care about is that the device supports a classic model for programming it – we call this model the von Neumann architecture.  We will discuss this model in much more detail when we start considering exactly how software and hardware work with respect to <a class="reference internal" href="../assembly/intro.html"><span class="std std-doc">assembly language</span></a>.   Below illustrates how we will visually represent a generic von Neumann based computer and summarizes what we need to know for now.</p>
 <figure class="align-default" id="id1">
 <img alt="Von Neummann Computer" src="../images/src/SLS_TheMachine.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">Our illustration of a von Neumann computer</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">Our illustration of a von Neumann computer</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p><strong>Central Processing Unit (CPU):</strong></p>
@@ -509,21 +509,21 @@ document.write(`
 </ul>
 <p>For the moment it suffices to say that programming a computer means being able to apply your knowledge of a programming language and existing software to have the computer do something you want it to.  For example, edit photos, play music, maintain a list of grocery items, calculate PI, send email, browse the web, test if a molecule might have promise as a new vaccine, automatically adjust the temperature of your home, control a car, etc.</p>
 <section id="programmer-vs-user">
-<h3><span class="section-number">1.1.1. </span>Programmer vs User<a class="headerlink" href="#programmer-vs-user" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.1. </span>Programmer vs User<a class="headerlink" href="#programmer-vs-user" title="Link to this heading">#</a></h3>
 <p>To be honest many people simply care that the computer can run existing programs – we will call these folks “Users”. However, “Programmers” are a special type of user.  Programmers use Operating Systems, and other software tools to create new programs themselves.  As a matter of fact some programmers simply focus on developing programs that make writing programs easier – like the folks that develop the operating system software, programming languages, editors, etc.</p>
 </section>
 </section>
 <section id="useful">
-<h2><span class="section-number">1.2. </span>Useful<a class="headerlink" href="#useful" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.2. </span>Useful<a class="headerlink" href="#useful" title="Link to this heading">#</a></h2>
 <p>So from our perspective, the main aspects of the operating system, that we care about, is that it makes it ease for programmers to create new programs.  In addition we would like an operating system that does not hide things from us so that we can explore how programs (and computers) work.</p>
 <p>Operating Systems are designed and created with specific uses and hardware in mind.  Some are designed for special purpose computers and the programs that are expected to run on them like computers built into an airplane to control its various parts or a super-computer which is expected to run complex and large scientific simulation programs.  While other operating systems are designed primarily to enable users to install and run commercial grade programs on their personal devices.  These operating systems while they do enable programmers to write new programs, they are designed to hide most of these aspects from their “normal” target user.  Those users mainly just wants to use programs written by others.  The interface of these operating systems tend to focus on graphics and visually oriented ways of interacting with programs.</p>
 </section>
 <section id="unix">
-<h2><span class="section-number">1.3. </span>UNIX<a class="headerlink" href="#unix" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.3. </span>UNIX<a class="headerlink" href="#unix" title="Link to this heading">#</a></h2>
 <p><img alt="unix" src="../images/src/unix.png" /></p>
 <p>UNIX on the other hand assumes that its users are primarily programmers.  Its design and collection of tools are not meant to be particularly user friendly.   Rather UNIX is designed to allow programmers to be very productive and to support a broad range of programming tools.  Many of the concepts and mechanisms of UNIX underly, are in, other operating systems but have been hidden or obscured to make things easier for their non-programmer users.</p>
 <section id="an-operating-system-built-by-programmers-for-programmers">
-<h3><span class="section-number">1.3.1. </span>An operating System Built by Programmers for Programmers<a class="headerlink" href="#an-operating-system-built-by-programmers-for-programmers" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.3.1. </span>An operating System Built by Programmers for Programmers<a class="headerlink" href="#an-operating-system-built-by-programmers-for-programmers" title="Link to this heading">#</a></h3>
 <p>The <a class="reference external" href="https://www.opengroup.org/membership/forums/platform/unix">UNIX</a> operating system was built by master programmers who valued programmability and productivity.  In some sense learning to work on the UNIX systems is a right of passage that not only teaches you how to be productive on a computer running the UNIX operating system but teaches you to think and act like a programmer.</p>
 <p>Given its programming focus UNIX is organized around two categories of software – kernel and user.  The kernel is a component of the UNIX that users of UNIX do not directly interact with.  It is the core software that is used to manage the various devices of the computer and construct an environment that allows programmers to create new users programs.  The idea is that very little is really built into UNIX rather its users are encouraged to write lots of small programs that build on the functionality of the kernel to do useful things.  The kernel’s main job is to provide the ability to run new program, provide those programs with access to the hardware, and provide common ways for programs to interconnect, work together.</p>
 <p>I know this all sounds a bit recursive – welcome to computer science.  As we start interacting with UNIX it will make more sense.</p>
@@ -536,7 +536,7 @@ document.write(`
 </div>
 </section>
 <section id="the-kernel">
-<h3><span class="section-number">1.3.2. </span>The Kernel<a class="headerlink" href="#the-kernel" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.3.2. </span>The Kernel<a class="headerlink" href="#the-kernel" title="Link to this heading">#</a></h3>
 <p>The Kernel is the bottom layer of software that has direct access to all the hardware.  There is a single instance of the kernel that bootstraps the hardware.  It provides a means for starting application programs (often also called user programs).  The kernel performs and provides several important abilities.</p>
 <ol class="arabic simple">
 <li><p>The kernel enables several user programs to run at the same time.</p></li>
@@ -562,7 +562,7 @@ document.write(`
 </div>
 </section>
 <section id="user-programs">
-<h3><span class="section-number">1.3.3. </span>User Programs<a class="headerlink" href="#user-programs" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.3.3. </span>User Programs<a class="headerlink" href="#user-programs" title="Link to this heading">#</a></h3>
 <p>Largely what most people think of when they think of an OS is the large body of pre-packaged user programs that can be installed with the kernel of the OS.   Typically there are at least three categories of user programs, including:</p>
 <ol class="arabic simple">
 <li><p>Display Servers:  These are collections of programs designed to operate specific devices for human interaction such as graphical screens, keyboards, mice, touch pads, touch screens, etc.  The first layer of this software (after the kernel) is typically some form of <a class="reference external" href="https://en.wikipedia.org/wiki/Windowing_system#Display_server">Windowing System</a>.  Examples include Microsoft’s <a class="reference external" href="https://en.wikipedia.org/wiki/Desktop_Window_Manager">Desktop Window Manager</a>, Apple’s <a class="reference external" href="https://en.wikipedia.org/wiki/Quartz_Compositor">Quartz Compositor</a> and the <a class="reference external" href="https://en.wikipedia.org/wiki/X_Window_System">X Window System</a> traditionally used by Unix operating systems. Today we are also seeing the rise of using web-browsers to present a graphical interface system this includes <a class="reference external" href="https://en.wikipedia.org/wiki/Project_Jupyter#JupyterLab">Jupyter Lab</a> which we make use of.   However, as in the case of Unix, older systems they typically retain support for their rich older <a class="reference internal" href="terminal.html"><span class="std std-doc">ASCII terminal devices</span></a> in the form of command line shell programs (<a class="reference internal" href="shellintro.html"><span class="std std-doc">Shell</span></a>).</p></li>
@@ -572,7 +572,7 @@ document.write(`
 <p>One of the distinguishing feature of Unix is its standard user command line programs that are geared to programmers (<a class="reference external" href="https://en.wikipedia.org/wiki/List_of_Unix_commands">https://en.wikipedia.org/wiki/List_of_Unix_commands</a>).  While they lack graphical interfaces and are <a class="reference internal" href="terminal.html#ASCII_sec"><span class="std std-ref">ASCII</span></a>/command line oriented they form a very rich and powerful set of building blocks that allow a knowledgeable programmer to rapidly create turnkey solutions including the; text searching and transformation, data wrangling, automation, as well as the development and debugging of large applications.</p>
 </section>
 <section id="visualizing-a-unix-system">
-<h3><span class="section-number">1.3.4. </span>Visualizing a Unix system<a class="headerlink" href="#visualizing-a-unix-system" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.3.4. </span>Visualizing a Unix system<a class="headerlink" href="#visualizing-a-unix-system" title="Link to this heading">#</a></h3>
 <p><img alt="running a unix system" src="../images/src/sys.png" /></p>
 <p>We visualized a running Unix system with the Hardware of the computer at the bottom, shaded
 blue, and the running software, shaded in green, above it.  The Unix Kernel is a persistent
@@ -586,12 +586,12 @@ terminated (killed) by the user we would remove its circle.  So while in reality
 physically see the programs running we none the less think of the running software as forming
 a world of its own, inside the machine, with the kernel enabling its construction and management.</p>
 <section id="processes-and-executables">
-<h4><span class="section-number">1.3.4.1. </span>Processes and Executables<a class="headerlink" href="#processes-and-executables" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.3.4.1. </span>Processes and Executables<a class="headerlink" href="#processes-and-executables" title="Link to this heading">#</a></h4>
 <p>In UNIX a running program is called a <strong>process</strong>. A program that a process can be created from is called and <strong>executable</strong>.   In some sense this book is a journey into understanding what exactly these are, how they relate to each other, the operating system and ultimately the hardware.</p>
 </section>
 </section>
 <section id="benefits-to-studying-unix">
-<h3><span class="section-number">1.3.5. </span>Benefits to studying UNIX<a class="headerlink" href="#benefits-to-studying-unix" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.3.5. </span>Benefits to studying UNIX<a class="headerlink" href="#benefits-to-studying-unix" title="Link to this heading">#</a></h3>
 <p>UNIX’s terminal interface and program development environment became the gold standard for university Computer Science education.  The following are some of the reasons it became so and why it continues to be critical both academically, scientifically and industrially.</p>
 <p>The most basic interface it presents, the <a class="reference internal" href="shellintro.html"><span class="std std-doc">Shell</span></a>, is a programmer oriented model for interacting with the computer.  Furthermore Unix comes with a large collection of composable and extensible tools for processing ASCII documents that naturally integrate and extend the power of the Shell.  These tools make it easy to write new programs including programs that translate ASCII documents, source code in one language, into source code of another language.</p>
 <p>While it takes some effort to learn its strange command line interface, doing so teaches you to think like a programmer.  Where you are encouraged to writing little re-usable programs that you incrementally evolve as needed and combine with others to get big tasks done.  Generally trying to avoid any particular program from getting too complicated.</p>
@@ -601,7 +601,7 @@ a world of its own, inside the machine, with the kernel enabling its constructio
 </section>
 </section>
 <section id="bottomline">
-<h2><span class="section-number">1.4. </span>Bottomline<a class="headerlink" href="#bottomline" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.4. </span>Bottomline<a class="headerlink" href="#bottomline" title="Link to this heading">#</a></h2>
 <p>UNIX comes with the kernel and a large collection of existing programs that permit a programmer to write more programs, that they and others can use.   In this book we will focus on what a program really is, how they are constructed and along the way the core tools, skills and ideas that underly all of computing.  Given UNIX’s programmer focus and transparency it is a good choice for us. Furthermore, learning how to be productive in the UNIX environment will teach us a lot about being productive programmers period.</p>
 <div class="note admonition">
 <p class="admonition-title">FYI</p>
@@ -637,7 +637,7 @@ a world of its own, inside the machine, with the kernel enabling its constructio
               
               
               
-                <footer class="prev-next-footer d-print-none">
+                <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -739,8 +739,8 @@ By Jonathan Appavoo
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
