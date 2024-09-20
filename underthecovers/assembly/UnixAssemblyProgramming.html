@@ -511,7 +511,7 @@ document.write(`
 <h3><span class="section-number">8.2.1. </span>What does ls tell us about ls ;-)<a class="headerlink" href="#what-does-ls-tell-us-about-ls" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "9d35054b7d824c2898fb2bc6e3e5115d"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "77b0d67eb8cb46db888427143442469a"}</script></div>
 </div>
 <p>Running using ls to list the meta data of the file <code class="docutils literal notranslate"><span class="pre">/bin/ls</span></code> we see that it contains a sizable number of bytes.  We also see that the permissions clearly mark it as being executable by all users of the system <code class="docutils literal notranslate"><span class="pre">-rwxr-x-rx</span></code> (if you don’t remember how to read this output see <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">ls</span></code>).</p>
 </section>
@@ -521,7 +521,7 @@ document.write(`
 <p>Below we pass the <code class="docutils literal notranslate"><span class="pre">-v</span></code> flag to <code class="docutils literal notranslate"><span class="pre">cat</span></code> so that it converts the non-ASCII values (things the terminal will not be able to print) in <code class="docutils literal notranslate"><span class="pre">/bin/ls</span></code> into a sequence of printable characters that represent their value,  Specifically it using ‘^’ and ‘M-’ as prefixes followed by another character.  You can see the man page of <code class="docutils literal notranslate"><span class="pre">cat</span></code> and the <a class="reference internal" href="../unix/terminal.html#ASCII_sec"><span class="std std-ref">ASCII Table</span></a> for more information.</p>
 <div class="cell tag_remove-input tag_output_scroll docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "d7ec714c1b3145cb897963eca5e8fa3b"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "634181325f6448fcadf2634c7a5cab70"}</script></div>
 </div>
 </section>
 <section id="lets-look-at-the-byte-values-of-bin-ls-using-xxd">
@@ -529,7 +529,7 @@ document.write(`
 <p>So while the data in <code class="docutils literal notranslate"><span class="pre">/bin/ls</span></code> does not seem to be encoded in ASCII we can use other UNIX tools to translate the individual bytes of the file into a numeric ASCII value so that we can at least see what the values of the bytes of the file are.  There are several such tools we could use. Examples include: <code class="docutils literal notranslate"><span class="pre">od</span></code> (octal dump), <code class="docutils literal notranslate"><span class="pre">hexdump</span></code>, and <code class="docutils literal notranslate"><span class="pre">xxd</span></code>.  We will use <code class="docutils literal notranslate"><span class="pre">xxd</span></code></p>
 <div class="cell tag_remove-input tag_output_scroll docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "1fef2cda7a744060a21f51d75e186f14"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "291bd83a89e14c258d72d44db8344e60"}</script></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">xxd</span></code> conveniently lets us look at the value of a file represented in base 2 binary digits or base 16 hexadecimal digits.   We will use the following command to display the first 256 bytes of the file in binary: <code class="docutils literal notranslate"><span class="pre">xxd</span> <span class="pre">-l</span> <span class="pre">256</span> <span class="pre">-g</span> <span class="pre">1</span> <span class="pre">-c</span> <span class="pre">8</span> <span class="pre">-b</span> <span class="pre">/bin/ls</span></code></p>
 <p>Where:</p>
@@ -542,12 +542,12 @@ document.write(`
 <p>This causes <code class="docutils literal notranslate"><span class="pre">xxd</span></code> to open <code class="docutils literal notranslate"><span class="pre">/bin/ls</span></code> and read the first 256 bytes.  It examines the value of each byte read and translates it so that it produces a string of eight ASCII characters of either <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code> depending on the value of the bits of the byte.  In this way we can use <code class="docutils literal notranslate"><span class="pre">xxd</span></code> to display the byte values of a file.  The left hand column of the output encodes the byte position in the file that the line of data corresponds too.  These position values start at zero are in hexadecimal notation (eg. <code class="docutils literal notranslate"><span class="pre">00000010</span></code> is 16 in decimal).  On the far right of each line <code class="docutils literal notranslate"><span class="pre">xxd</span></code> prints an ASCII interpretation for any byte values that correspond to printable ASCII characters (otherwise it prints a <code class="docutils literal notranslate"><span class="pre">.</span></code>).</p>
 <div class="cell tag_remove-input tag_output_scroll docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "81ad394ff77e4df99d96e160d167bb0a"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "818aa2898e1f48679521d55f686ab851"}</script></div>
 </div>
 <p>Using hexadecimal notation we get more concise visual representation</p>
 <div class="cell tag_remove-input tag_output_scroll docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "517968859d4c46caba9013fae5f62bc4"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "eab9851ef12945f2a67829e0d3d3a60e"}</script></div>
 </div>
 <p>So while it might look cool, without knowing how to interpret the byte values it really does not provide us much insight as to what makes this file a program that lists the contents of directories.</p>
 </section>
@@ -556,12 +556,12 @@ document.write(`
 <p>While there are no explicit file types in UNIX that tell use what kind of information is in a file (we are expected to know) there is a command that is very good at examining a file and guessing what kind of information is encoded in the file based on a large database of test.  This command is called <code class="docutils literal notranslate"><span class="pre">file</span></code>.  Here is its manual page.</p>
 <div class="cell tag_remove-input tag_output_scroll docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "07c19e13b847467f92e27c3a751c18dc"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "ea56fc4f4f97439986c0e15696b8949a"}</script></div>
 </div>
 <p>Well let’s see what <code class="docutils literal notranslate"><span class="pre">file</span></code> has to say about <code class="docutils literal notranslate"><span class="pre">/bin/ls</span></code>.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "0099e4eddeb74c5eaa579aa832ff3dac"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "f2eb85ead1ac4268ac24aa593ae6fc48"}</script></div>
 </div>
 <p>Ok cool!  File tells us <code class="docutils literal notranslate"><span class="pre">/bin/ls</span></code> is an <strong>ELF</strong> file.  You might have noticed that the xxd output showed the ASCII characters <code class="docutils literal notranslate"><span class="pre">ELF</span></code> near the beginning of the file.  This is due to the fact that this is part of the <code class="docutils literal notranslate"><span class="pre">ELF</span></code> standard format to make recognition of them easier.</p>
 </section>
@@ -570,23 +570,23 @@ document.write(`
 <p>So what exactly is an ELF file?  Lets see what the manuals have to say. P.S. You are not expected to understand what it is saying at this point.</p>
 <div class="cell tag_remove-input tag_output_scroll docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "20d332a531404c979c8bfed91d5a8899"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "6f2cfd7846404c3f8fd03ecf8bbcd1ba"}</script></div>
 </div>
 <p>Wow, that’s a lot of information that does not make much sense at this point.  However, it is nice to see that it seems to be a format for encoding “executable” files ;-)</p>
 <p>Now, as it turns out, there several tools such as <code class="docutils literal notranslate"><span class="pre">readelf</span></code> and <code class="docutils literal notranslate"><span class="pre">objdump</span></code> that are designed to decode <code class="docutils literal notranslate"><span class="pre">elf</span></code> files.  But it is not clear that this is going to help much until we get a better conceptual understanding of what it means to encode a program for execution in a process.</p>
 <p>For your interest here is the output for <code class="docutils literal notranslate"><span class="pre">readelf</span> <span class="pre">--all</span> <span class="pre">/bin/ls</span></code> and <code class="docutils literal notranslate"><span class="pre">objdump</span> <span class="pre">--all</span> <span class="pre">/bin/ls</span></code> which dump summary information about the <code class="docutils literal notranslate"><span class="pre">/bin/ls</span></code> executable.</p>
 <div class="cell tag_remove-input tag_output_scroll docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "ee971a85aad943b2b497becaf650fcbd"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "eed7f371a9464a63ae119ced5ab4c42f"}</script></div>
 </div>
 <div class="cell tag_remove-input tag_output_scroll docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "37c5303564b3448386a14c1b4cfdf0b7"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "355357d90bbf4e63bf18f74b07700c30"}</script></div>
 </div>
 <p>As a teaser here is some actual “content” that objdump can extract and decode from <code class="docutils literal notranslate"><span class="pre">/bin/ls</span></code>.  Specifically this command, <code class="docutils literal notranslate"><span class="pre">objdump</span> <span class="pre">-d</span> <span class="pre">/bin/ls</span></code> ‘disassembles’ the binary.</p>
 <div class="cell tag_remove-input tag_output_scroll docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "4686c692bfe840e2a33a0d7f38fa7f59"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "f35302d1ce794447a8692a0124041880"}</script></div>
 </div>
 </section>
 </section>
@@ -596,7 +596,7 @@ document.write(`
 <p>Lets start by looking up the manpage for the operating system call <code class="docutils literal notranslate"><span class="pre">exec</span></code>.  At this point we are going to ignore the programming syntax and mechanics and rather focus on what we can learn in broad strokes from the manual page.</p>
 <div class="cell tag_remove-input tag_output_scroll docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "f517d52f470f4d0daca6143397c73cf3"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "295fd30cc7b241538d707d9c86ab6648"}</script></div>
 </div>
 <div class="note admonition">
 <p class="admonition-title">FYI</p>
@@ -605,100 +605,37 @@ document.write(`
 <p>We want to focus on the first two paragraphs of the description (lines 27 - 33).  These sentences imply that running a program loads a new “process image” over the current one.  Remember, in the Introduction we used the term memory image. It is not a random coincidence that we are seeing the same terminology here.  Further reading between the lines, the “file” to be executed contains or is the base of the new process image.  Given that this man page tells us that <code class="docutils literal notranslate"><span class="pre">exec</span></code> is really just a front end of <code class="docutils literal notranslate"><span class="pre">execve</span></code>, lets look at that man page and see if we can learn a little more.</p>
 <div class="cell tag_remove-input tag_output_scroll docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "1e99aef881884dd5902f3b383cd60224"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "94e29007b7024e19a061b27baa423acc"}</script></div>
 </div>
 <p>Let’s focus on lines 13-21 and 41-43. Again, we see that the wording is all about replacing the contents of an existing process with the value from the executable file.  Further, we that some parts of the new process will be <code class="docutils literal notranslate"><span class="pre">newly</span> <span class="pre">initialized</span></code>: <em>stack</em>, <em>heap</em> and <em>data</em> <em>segments</em>. In lines 41-43 we are told that <code class="docutils literal notranslate"><span class="pre">execve</span></code>, assuming success, will overwrite certain parts of the <em>text</em>, <em>data</em> and <em>stack</em> of the process with the contents of the executable file (newly loaded program).  So, vaguely, we are starting to get the picture that an executable encodes values that get “loaded” into a process to initialize the execution of the program contained within it.</p>
 <p>Our task now is to start putting the pieces together.  We need to get a better idea of processes are, their relationship to binary executable files and how we go about encoding a program into an executable.</p>
 </section>
 <section id="binary-executables-as-process-images">
 <h2><span class="section-number">8.4. </span>Binary Executables as Process Images.<a class="headerlink" href="#binary-executables-as-process-images" title="Permalink to this heading">#</a></h2>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<!-- produced by: 
-htmlFig("[{'src': '../../images/src/SLS_TheMachine.png'}]", 
-        id="fig:vnm", 
-        align="center", 
-        width="80%",
-        margin="auto auto auto auto",
-        caption="<center>Figure: Our illustration of a von Neumann computer.  Our view is slightly updated to put the model interms of todays computers.</center>", 
-        captionalign="left")
--->
-<table id="fig:vnm" align="center" width="80%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; margin: auto auto auto auto">
-    <tr style="padding: 0; margin: 0;"> 
-        <td colspan="1" width="100%" style="padding: 0; margin: 0 0 0 0; background-color:inherit;">
-            <div style="padding: 0; margin: 0 0 0 0;">
-              <figure style="padding: 0; margin: 0 0 0 0; width:100%;">
-                   <img src="../../images/src/SLS_TheMachine.png" width="100%" style="padding: 0; margin: 0;">
-                </figure>
-            </div>
-        </td>
-    </tr>
-    <caption align="bottom" style="text-align: left; padding: 0; margin: 0;" >
-          <i><center>Figure: Our illustration of a von Neumann computer.  Our view is slightly updated to put the model interms of todays computers.</center></i> 
-    </caption>
-</table>
-</div>
-</div>
+<figure class="align-default" id="id1">
+<img alt="vnm" src="../images/src/SLS_TheMachine.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 8.1 </span><span class="caption-text">Our illustration of a von Neumann computer.  Our view is slightly updated to put the model in terms of todays computers.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Given our basic view of how a <a class="reference internal" href="vonNeumannArchitecture.html"><span class="std std-doc">von Neumann</span></a> computer operates we can see that what we load into memory drives the CPU’s execution.  But how does this relate to the what is going on when we are running an operating system like UNIX  which constructs a world of running software down into an OS kernel and a set of user processes?</p>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<!-- produced by: 
-htmlFig("[{'src': '../../images/src/UnixRunning.png'}]", 
-        id="", 
-        align="center", 
-        width="80%",
-        margin="auto auto auto auto",
-        caption="Figure: Running Unix system.", 
-        captionalign="left")
--->
-<table align="center" width="80%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; margin: auto auto auto auto">
-    <tr style="padding: 0; margin: 0;"> 
-        <td colspan="1" width="100%" style="padding: 0; margin: 0 0 0 0; background-color:inherit;">
-            <div style="padding: 0; margin: 0 0 0 0;">
-              <figure style="padding: 0; margin: 0 0 0 0; width:100%;">
-                   <img src="../../images/src/UnixRunning.png" width="100%" style="padding: 0; margin: 0;">
-                </figure>
-            </div>
-        </td>
-    </tr>
-    <caption align="bottom" style="text-align: left; padding: 0; margin: 0;" >
-          <i>Figure: Running Unix system.</i> 
-    </caption>
-</table>
-</div>
-</div>
+<figure class="align-default" id="id2">
+<img alt="runningunix" src="../images/src/run.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 8.2 </span><span class="caption-text">Running Unix system.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>From our perspective, as users of an operating system, we navigate the file system to find programs, in the form of executable files, to launch.  In UNIX we use a shell like bash to do this.  Bash on our behalf calls down into the UNIX Kernel requesting that it creates a new process from the specified executable file. In UNIX bash does this with two UNIX kernel system calls (fork and exec).</p>
 <p><img alt="image" src="../images/src/elf.png" /></p>
 <section id="process-contexts">
 <h3><span class="section-number">8.4.1. </span>Process Contexts<a class="headerlink" href="#process-contexts" title="Permalink to this heading">#</a></h3>
 <p>To better understanding of how processes, executables and the von Neumann model of execution relate, we need to dig down a little further.</p>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<!-- produced by: 
-htmlFig("[{'src': '../../images/src/context.png'}]", 
-        id="", 
-        align="center", 
-        width="80%",
-        margin="auto auto auto auto",
-        caption="Figure: Process contexts.", 
-        captionalign="left")
--->
-<table align="center" width="80%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; margin: auto auto auto auto">
-    <tr style="padding: 0; margin: 0;"> 
-        <td colspan="1" width="100%" style="padding: 0; margin: 0 0 0 0; background-color:inherit;">
-            <div style="padding: 0; margin: 0 0 0 0;">
-              <figure style="padding: 0; margin: 0 0 0 0; width:100%;">
-                   <img src="../../images/src/context.png" width="100%" style="padding: 0; margin: 0;">
-                </figure>
-            </div>
-        </td>
-    </tr>
-    <caption align="bottom" style="text-align: left; padding: 0; margin: 0;" >
-          <i>Figure: Process contexts.</i> 
-    </caption>
-</table>
-</div>
-</div>
+<figure class="align-default" id="id3">
+<img alt="runningunix" src="../images/src/context.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 8.3 </span><span class="caption-text">Process contexts.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Each time we ask the OS kernel to launch a binary executable, the kernel creates a new process “Context”.
 Each context is a collection of data structures that the kernel uses to represent the memory for the process and the CPU registers.   A process is like a restricted virtual von Neumann computer.</p>
 <section id="context-switch-scheduling-processes">
@@ -716,33 +653,12 @@ Each context is a collection of data structures that the kernel uses to represen
 <p>We can now put things together.   In the section above we discussed how the Kernel represents processes with context data structures and uses them to schedule the CPU across processes.  But where do the initial contents of memory for a process come from?</p>
 <p>This is the primary role that binary executables files serve.   Binaries are files that describe the initial memory contents for a process; the exact values that the process contexts data structures should be initialized with and their addresses.    From this perspective, an executable is the initial memory “image” that the OS “loads” into a newly created process context.  The reason we call it an image is that it is precise map that describes what the memory of a process should initially look like.  While the process executes the memory context will change and evolve diverging from the initial image of the executable.</p>
 <p>The figure below illustrates this relationship with a simple example.</p>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<!-- produced by: 
-htmlFig("[{'src': '../../images/src/context2.png'}]", 
-        id="", 
-        align="center", 
-        width="100%",
-        margin="auto auto auto auto",
-        caption="Figure: Example illustrating the relationships between executables and processes.", 
-        captionalign="left")
--->
-<table align="center" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; margin: auto auto auto auto">
-    <tr style="padding: 0; margin: 0;"> 
-        <td colspan="1" width="100%" style="padding: 0; margin: 0 0 0 0; background-color:inherit;">
-            <div style="padding: 0; margin: 0 0 0 0;">
-              <figure style="padding: 0; margin: 0 0 0 0; width:100%;">
-                   <img src="../../images/src/context2.png" width="100%" style="padding: 0; margin: 0;">
-                </figure>
-            </div>
-        </td>
-    </tr>
-    <caption align="bottom" style="text-align: left; padding: 0; margin: 0;" >
-          <i>Figure: Example illustrating the relationships between executables and processes.</i> 
-    </caption>
-</table>
-</div>
-</div>
+<figure class="align-default" id="id4">
+<img alt="runningunix" src="../images/src/context2.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 8.4 </span><span class="caption-text">Example illustrating the relationships between executables and processes.</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>At the bottom of the figure, four executable files are illustrated as colored document icons; 1) <code class="docutils literal notranslate"><span class="pre">/bin/ls</span></code> (orange), 2) <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code>, 3) <code class="docutils literal notranslate"><span class="pre">mypgm</span></code> (blue) and 4) <code class="docutils literal notranslate"><span class="pre">/bin/vim</span></code> (purple).  These files are located on the storage I/O devices. The rest of the diagram illustrates a UNIX kernel that is running four processes.  With the kernel, four contexts are shown, one for each process.  The memory of each context is colored with the color of the executable they were started with.  In this case <code class="docutils literal notranslate"><span class="pre">Context</span> <span class="pre">0</span></code> was initialized with <code class="docutils literal notranslate"><span class="pre">/bin/ls</span></code>, <code class="docutils literal notranslate"><span class="pre">Context</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">Context</span> <span class="pre">2</span></code> from <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code> and finally <code class="docutils literal notranslate"><span class="pre">Context</span> <span class="pre">3</span></code> with an executable file called <code class="docutils literal notranslate"><span class="pre">mypgm</span></code>.  Above the kernel is the abstract view of the running processes that correspond to the contexts.  The kernel assigns each process a unique identifying number called a Process Identifier (pid).</p>
 <p>In UNIX the <code class="docutils literal notranslate"><span class="pre">ps</span></code> command lets us explore this view of the systems, listing the running process.  <code class="docutils literal notranslate"><span class="pre">ps</span></code> can display many attributes of the processes including the pid and the executable it was initialized with.</p>
 <p>Executables are used to initialize the memory for new process contents.  Many contents can be created from a single executable. Each process, after it is created, is an independent running instance of the executable.  In the figure, we can see that two processes have been started from the <code class="docutils literal notranslate"><span class="pre">bash</span></code> executable.    As the processes execute, they modify their memory contexts but the original executable is not modified and is preserved as a starting point for any new contexts started from it.   This is how we can have many independent “shell” processes running all spawned from the same binary.   Note that while many independent processes can be running at a given time, started from one or more executables, there is always only one OS kernel running that manages these processes.</p>
@@ -780,33 +696,12 @@ To do this we will use the two tools that are the foundation for constructing ex
 <h3><span class="section-number">8.5.1. </span>Assemblers<a class="headerlink" href="#assemblers" title="Permalink to this heading">#</a></h3>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Assembly_language#Assembler">assembler</a> is a program that processes commands in a file that directs it to create fragments of memory contents.  The linker, discussed next, will combine these fragments according to a generic layout to create an executable.</p>
 <p>The code we write in the syntax of the assembler is assembly code and is a combination of CPU specific mnemonics and special assembler specific <strong>directives</strong> .  We write assembly code files in ASCII with an ASCII editor.  Traditionally on UNIX systems we use the suffix <code class="docutils literal notranslate"><span class="pre">.s</span></code> or <code class="docutils literal notranslate"><span class="pre">.S</span></code> for assembly code files.</p>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<!-- produced by: 
-htmlFig("[{'src': '../../images/src/assembler.png'}]", 
-        id="", 
-        align="center", 
-        width="100%",
-        margin="auto auto auto auto",
-        caption="Figure: Assembler.", 
-        captionalign="left")
--->
-<table align="center" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; margin: auto auto auto auto">
-    <tr style="padding: 0; margin: 0;"> 
-        <td colspan="1" width="100%" style="padding: 0; margin: 0 0 0 0; background-color:inherit;">
-            <div style="padding: 0; margin: 0 0 0 0;">
-              <figure style="padding: 0; margin: 0 0 0 0; width:100%;">
-                   <img src="../../images/src/assembler.png" width="100%" style="padding: 0; margin: 0;">
-                </figure>
-            </div>
-        </td>
-    </tr>
-    <caption align="bottom" style="text-align: left; padding: 0; margin: 0;" >
-          <i>Figure: Assembler.</i> 
-    </caption>
-</table>
-</div>
-</div>
+<figure class="align-default" id="id5">
+<img alt="assembler" src="../images/src/assembler.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 8.5 </span><span class="caption-text">Assembler.</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>As illustrated in the figure authors of the assembler use the CPU manufactures documentation to write the assembler.  The assembler is written to be able to translate the  CPU mnemonics, written in ASCII  into the CPU specific binary values that encode the specified instruction.</p>
 <p>The assembler directives allow us to write arbitrary values that should be placed in memory.  The assembler understands various formats (such as hex, binary, signed and unsigned integers, ASCII, etc) and sizes.  The assembler will convert the values we write, in the various formats, into the correct raw binary values that should be place in memory.  Directives also let us control both the relative and absolute placement of values.</p>
 <p>In addition to mnemonics and directives, assemblers allow a programmer to introduce symbolic human readable labels for the addresses of particular values.  The symbolic labels, or simply symbols, allow us within our assembly code to refer to the values at the location of the symbol.  It will be the linker’s job to both set the address for a label and replace the reference to the symbols address to the address it assigns to the symbol.</p>
@@ -832,33 +727,12 @@ htmlFig("[{'src': '../../images/src/assembler.png'}]",
 <h3><span class="section-number">8.5.2. </span>Linkers<a class="headerlink" href="#linkers" title="Permalink to this heading">#</a></h3>
 <p>The process of constructing executables has purposefully been broken down into two steps to make it easier to construct programs out of a collection of code.   Specifically as we read above an assembler produces fragments of memory values called object files.</p>
 <p>The basic idea is that programmers  write various reusable chucks of assembly code that introduce data and text stored in object files.  The data and text from multiple object files can then be combined to produce a final executable by a <a class="reference external" href="https://en.wikipedia.org/wiki/Linker_(computing)">linker</a>.   Where the linker takes object files, libraries of object files and a generic description of how the text and data should be laid out, located in memory, to be compatible with the OS process model.</p>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<!-- produced by: 
-htmlFig("[{'src': '../../images/src/linker.png'}]", 
-        id="", 
-        align="center", 
-        width="100%",
-        margin="auto auto auto auto",
-        caption="Figure: Assembler.", 
-        captionalign="left")
--->
-<table align="center" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; margin: auto auto auto auto">
-    <tr style="padding: 0; margin: 0;"> 
-        <td colspan="1" width="100%" style="padding: 0; margin: 0 0 0 0; background-color:inherit;">
-            <div style="padding: 0; margin: 0 0 0 0;">
-              <figure style="padding: 0; margin: 0 0 0 0; width:100%;">
-                   <img src="../../images/src/linker.png" width="100%" style="padding: 0; margin: 0;">
-                </figure>
-            </div>
-        </td>
-    </tr>
-    <caption align="bottom" style="text-align: left; padding: 0; margin: 0;" >
-          <i>Figure: Assembler.</i> 
-    </caption>
-</table>
-</div>
-</div>
+<figure class="align-default" id="id6">
+<img alt="assembler" src="../images/src/linker.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 8.6 </span><span class="caption-text">Assembler.</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>While this approach might seem unnecessarily complicated at first it make our lives as programmers much easier.    First it provides us with the ability to compose our programs out of our own libraries of code and code provided by others.  Secondly we don’t have to worry about where exactly everything ends up in memory.  Rather the linker will be given all the inputs including general directives for how to layout the text and data of an executable for it to be compatible with a  particular OS.  With all of these this as input it will organize the values of our code into a coherent image that has the text and data correctly laid out and all symbols and their references will be carefully connect.</p>
 <p>The operation of the linker may seem quite vague at this point.  In later chapters we will fill in the details when we discuss how memory gets assigned by the OS to a process context when “loading” an executable.</p>
 <section id="gnu-linker-ld">
@@ -883,7 +757,7 @@ However, we will be able to use it with the debugger to explore the process that
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">FileCodeBox</span><span class="p">(</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">file</span><span class="o">=</span><span class="n">exdir</span> <span class="o">+</span> <span class="s2">&quot;/empty.s&quot;</span><span class="p">,</span> 
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;gas&quot;</span><span class="p">,</span> 
