@@ -27,6 +27,15 @@ parts:
   - file: assembly/UnixAssemblyProgramming
   - file: assembly/Debuggers
   - file: assembly/assembly
+  - file: assembly/anatomyI
+  - file: assembly/anatomyII
+  - file: assembly/anatomyIII
+  - file: assembly/anatomyIV
+  - file: assembly/assemblyOS
+- caption: "Into the Light : C PROGRAMMING"
+  numbered: true
+  chapters:
+  - file: c/cintro
 - caption: "COURSE SPECIFIC MATERIAL"
   numbered: true
   chapters:
