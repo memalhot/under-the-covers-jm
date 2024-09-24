@@ -203,10 +203,19 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">14. Executables and Processes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Debuggers.html">15. Machine Debuggers &amp; Open Process Surgery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="assembly.html">16. Lets write some assembly code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anatomyI.html">17. Assembly : Program Anatomy I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anatomyII.html">18. Program Anatomy II : Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anatomyIII.html">19. Program Anatomy III : Code as Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anatomyIV.html">20. Program Anatomy IV: The Tree of Bytes and Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assemblyOS.html">21. Assembly using the OS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Into the Light : C PROGRAMMING</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../c/cintro.html">22. Introduction</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">COURSE SPECIFIC MATERIAL</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../course/specifics.html">17. BU CS210 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../course/specifics.html">23. BU CS210 Overview</a></li>
 </ul>
 
     </div>
@@ -518,7 +527,7 @@ document.write(`
 <h3><span class="section-number">14.2.1. </span>What does ls tell us about ls ;-)<a class="headerlink" href="#what-does-ls-tell-us-about-ls" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "71b8d01fcf124025b4900bb1a3724bfa"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "47e1dedf279e4533b9681a49fd306e11"}</script></div>
 </div>
 <p>Running using ls to list the meta data of the file <code class="docutils literal notranslate"><span class="pre">/bin/ls</span></code> we see that it contains a sizable number of bytes.  We also see that the permissions clearly mark it as being executable by all users of the system <code class="docutils literal notranslate"><span class="pre">-rwxr-x-rx</span></code> (if you don’t remember how to read this output see <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">ls</span></code>).</p>
 </section>
@@ -528,7 +537,7 @@ document.write(`
 <p>Below we pass the <code class="docutils literal notranslate"><span class="pre">-v</span></code> flag to <code class="docutils literal notranslate"><span class="pre">cat</span></code> so that it converts the non-ASCII values (things the terminal will not be able to print) in <code class="docutils literal notranslate"><span class="pre">/bin/ls</span></code> into a sequence of printable characters that represent their value,  Specifically it using ‘^’ and ‘M-’ as prefixes followed by another character.  You can see the man page of <code class="docutils literal notranslate"><span class="pre">cat</span></code> and the <a class="reference internal" href="../unix/terminal.html#ASCII_sec"><span class="std std-ref">ASCII Table</span></a> for more information.</p>
 <div class="cell tag_remove-input tag_output_scroll docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "ea958d17ca7c4260a2d16b00dad6955f"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "c55aa6b5505444be8880848a0e20a963"}</script></div>
 </div>
 </section>
 <section id="lets-look-at-the-byte-values-of-bin-ls-using-xxd">
@@ -536,7 +545,7 @@ document.write(`
 <p>So while the data in <code class="docutils literal notranslate"><span class="pre">/bin/ls</span></code> does not seem to be encoded in ASCII we can use other UNIX tools to translate the individual bytes of the file into a numeric ASCII value so that we can at least see what the values of the bytes of the file are.  There are several such tools we could use. Examples include: <code class="docutils literal notranslate"><span class="pre">od</span></code> (octal dump), <code class="docutils literal notranslate"><span class="pre">hexdump</span></code>, and <code class="docutils literal notranslate"><span class="pre">xxd</span></code>.  We will use <code class="docutils literal notranslate"><span class="pre">xxd</span></code></p>
 <div class="cell tag_remove-input tag_output_scroll docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "aafcf9bd72e94577a3ca440e2e38f800"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "b06753ced8994c5bab151ddec766c09f"}</script></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">xxd</span></code> conveniently lets us look at the value of a file represented in base 2 binary digits or base 16 hexadecimal digits.   We will use the following command to display the first 256 bytes of the file in binary: <code class="docutils literal notranslate"><span class="pre">xxd</span> <span class="pre">-l</span> <span class="pre">256</span> <span class="pre">-g</span> <span class="pre">1</span> <span class="pre">-c</span> <span class="pre">8</span> <span class="pre">-b</span> <span class="pre">/bin/ls</span></code></p>
 <p>Where:</p>
@@ -549,12 +558,12 @@ document.write(`
 <p>This causes <code class="docutils literal notranslate"><span class="pre">xxd</span></code> to open <code class="docutils literal notranslate"><span class="pre">/bin/ls</span></code> and read the first 256 bytes.  It examines the value of each byte read and translates it so that it produces a string of eight ASCII characters of either <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code> depending on the value of the bits of the byte.  In this way we can use <code class="docutils literal notranslate"><span class="pre">xxd</span></code> to display the byte values of a file.  The left hand column of the output encodes the byte position in the file that the line of data corresponds too.  These position values start at zero are in hexadecimal notation (eg. <code class="docutils literal notranslate"><span class="pre">00000010</span></code> is 16 in decimal).  On the far right of each line <code class="docutils literal notranslate"><span class="pre">xxd</span></code> prints an ASCII interpretation for any byte values that correspond to printable ASCII characters (otherwise it prints a <code class="docutils literal notranslate"><span class="pre">.</span></code>).</p>
 <div class="cell tag_remove-input tag_output_scroll docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "35fd9894a0cd4406a0aad0968ab4f6ca"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "02aad94c72184ddebe1300e1037aad5d"}</script></div>
 </div>
 <p>Using hexadecimal notation we get more concise visual representation</p>
 <div class="cell tag_remove-input tag_output_scroll docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "e0a368849e6e49b6939006b5ae8b0423"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "02cb60444ce24fca9e6bf5cfc63fe6d4"}</script></div>
 </div>
 <p>So while it might look cool, without knowing how to interpret the byte values it really does not provide us much insight as to what makes this file a program that lists the contents of directories.</p>
 </section>
@@ -563,12 +572,12 @@ document.write(`
 <p>While there are no explicit file types in UNIX that tell use what kind of information is in a file (we are expected to know) there is a command that is very good at examining a file and guessing what kind of information is encoded in the file based on a large database of test.  This command is called <code class="docutils literal notranslate"><span class="pre">file</span></code>.  Here is its manual page.</p>
 <div class="cell tag_remove-input tag_output_scroll docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "53648a68ab964600bdc921c3d4e4a0d4"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "6aa32c2a3ffc40d89ba513ed36c4eb86"}</script></div>
 </div>
 <p>Well let’s see what <code class="docutils literal notranslate"><span class="pre">file</span></code> has to say about <code class="docutils literal notranslate"><span class="pre">/bin/ls</span></code>.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "3023c663ce464f79afbb89c9c1903170"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "ac7d3f161a934f9dade3a942e2eae02c"}</script></div>
 </div>
 <p>Ok cool!  File tells us <code class="docutils literal notranslate"><span class="pre">/bin/ls</span></code> is an <strong>ELF</strong> file.  You might have noticed that the xxd output showed the ASCII characters <code class="docutils literal notranslate"><span class="pre">ELF</span></code> near the beginning of the file.  This is due to the fact that this is part of the <code class="docutils literal notranslate"><span class="pre">ELF</span></code> standard format to make recognition of them easier.</p>
 </section>
@@ -577,23 +586,23 @@ document.write(`
 <p>So what exactly is an ELF file?  Lets see what the manuals have to say. P.S. You are not expected to understand what it is saying at this point.</p>
 <div class="cell tag_remove-input tag_output_scroll docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "a779ebcd31c54955ab5944e6e6edd347"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "ad6266a0ac0b433cbb0413f21825e298"}</script></div>
 </div>
 <p>Wow, that’s a lot of information that does not make much sense at this point.  However, it is nice to see that it seems to be a format for encoding “executable” files ;-)</p>
 <p>Now, as it turns out, there several tools such as <code class="docutils literal notranslate"><span class="pre">readelf</span></code> and <code class="docutils literal notranslate"><span class="pre">objdump</span></code> that are designed to decode <code class="docutils literal notranslate"><span class="pre">elf</span></code> files.  But it is not clear that this is going to help much until we get a better conceptual understanding of what it means to encode a program for execution in a process.</p>
 <p>For your interest here is the output for <code class="docutils literal notranslate"><span class="pre">readelf</span> <span class="pre">--all</span> <span class="pre">/bin/ls</span></code> and <code class="docutils literal notranslate"><span class="pre">objdump</span> <span class="pre">--all</span> <span class="pre">/bin/ls</span></code> which dump summary information about the <code class="docutils literal notranslate"><span class="pre">/bin/ls</span></code> executable.</p>
 <div class="cell tag_remove-input tag_output_scroll docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "0666bb101d3b496a9e9ee1f7f2368ab1"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "81bfbc5174024880b00570f8c7fb3d28"}</script></div>
 </div>
 <div class="cell tag_remove-input tag_output_scroll docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "ef4aaf7ef72a4141b7643e6ccd307ac7"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "e6507afc90e645e2ba041559fb843092"}</script></div>
 </div>
 <p>As a teaser here is some actual “content” that objdump can extract and decode from <code class="docutils literal notranslate"><span class="pre">/bin/ls</span></code>.  Specifically this command, <code class="docutils literal notranslate"><span class="pre">objdump</span> <span class="pre">-d</span> <span class="pre">/bin/ls</span></code> ‘disassembles’ the binary.</p>
 <div class="cell tag_remove-input tag_output_scroll docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "aa077792d77d43a58f30ec2f8f369af5"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "3915e5035ccb4164b75b5ee8b5fe2ba7"}</script></div>
 </div>
 </section>
 </section>
@@ -603,7 +612,7 @@ document.write(`
 <p>Lets start by looking up the manpage for the operating system call <code class="docutils literal notranslate"><span class="pre">exec</span></code>.  At this point we are going to ignore the programming syntax and mechanics and rather focus on what we can learn in broad strokes from the manual page.</p>
 <div class="cell tag_remove-input tag_output_scroll docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "aa652da050da47668454b3101fad1db4"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "42287a3c97ea4ec997b695f22a5d77c2"}</script></div>
 </div>
 <div class="note admonition">
 <p class="admonition-title">FYI</p>
@@ -612,7 +621,7 @@ document.write(`
 <p>We want to focus on the first two paragraphs of the description (lines 27 - 33).  These sentences imply that running a program loads a new “process image” over the current one.  Remember, in the Introduction we used the term memory image. It is not a random coincidence that we are seeing the same terminology here.  Further reading between the lines, the “file” to be executed contains or is the base of the new process image.  Given that this man page tells us that <code class="docutils literal notranslate"><span class="pre">exec</span></code> is really just a front end of <code class="docutils literal notranslate"><span class="pre">execve</span></code>, lets look at that man page and see if we can learn a little more.</p>
 <div class="cell tag_remove-input tag_output_scroll docutils container">
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "654abb6b75504a5684000e2b977fb22f"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "f50b82c2b0c8472fa5f65713d9c6d10e"}</script></div>
 </div>
 <p>Let’s focus on lines 13-21 and 41-43. Again, we see that the wording is all about replacing the contents of an existing process with the value from the executable file.  Further, we that some parts of the new process will be <code class="docutils literal notranslate"><span class="pre">newly</span> <span class="pre">initialized</span></code>: <em>stack</em>, <em>heap</em> and <em>data</em> <em>segments</em>. In lines 41-43 we are told that <code class="docutils literal notranslate"><span class="pre">execve</span></code>, assuming success, will overwrite certain parts of the <em>text</em>, <em>data</em> and <em>stack</em> of the process with the contents of the executable file (newly loaded program).  So, vaguely, we are starting to get the picture that an executable encodes values that get “loaded” into a process to initialize the execution of the program contained within it.</p>
 <p>Our task now is to start putting the pieces together.  We need to get a better idea of processes are, their relationship to binary executable files and how we go about encoding a program into an executable.</p>
