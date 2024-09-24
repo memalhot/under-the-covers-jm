@@ -32,7 +32,7 @@ parts:
   - file: assembly/anatomyIII
   - file: assembly/anatomyIV
   - file: assembly/assemblyOS
-- caption: "Into the Light : C PROGRAMMING"
+- caption: "INTO THE LIGHT: C PROGRAMMING"
   numbered: true
   chapters:
   - file: c/cintro
