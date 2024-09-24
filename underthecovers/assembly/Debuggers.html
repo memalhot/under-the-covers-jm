@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9. Machine Debuggers &amp; Open Process Surgery &#8212; Under the Covers</title>
+    <title>15. Machine Debuggers &amp; Open Process Surgery &#8212; Under the Covers</title>
   
   
   
@@ -59,8 +59,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'assembly/Debuggers';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="10. BU CS210 Overview" href="../course/specifics.html" />
-    <link rel="prev" title="8. Executables and Processes" href="UnixAssemblyProgramming.html" />
+    <link rel="next" title="16. Lets write some assembly code" href="assembly.html" />
+    <link rel="prev" title="14. Executables and Processes" href="UnixAssemblyProgramming.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -189,17 +189,24 @@
 <li class="toctree-l1"><a class="reference internal" href="../unix/files.html">3. Organizing and Managing Information as a Tree of Files and Directories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../unix/shellintro.html">4. The Shell - Part I: Having an ASCII conversation with the OS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../unix/shelldetails.html">5. The Shell - Part II: Some UNIX details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/editors.html">6. Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/processes.html">7. Processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ides.html">8. IDEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/make.html">9. Make</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/gitintro.html">10. Intro to Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/git.html">11. Git</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">THE BELLY OF THE BEAST: THE VON NEUMMAN ARCHITECTURE AND ASSEMBLY PROGRAMMING</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">6. Introduction: Assembly Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vonNeumannArchitecture.html">7. The von Neumann Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UnixAssemblyProgramming.html">8. Executables and Processes</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. Machine Debuggers &amp; Open Process Surgery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">12. Introduction: Assembly Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vonNeumannArchitecture.html">13. The von Neumann Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UnixAssemblyProgramming.html">14. Executables and Processes</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">15. Machine Debuggers &amp; Open Process Surgery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assembly.html">16. Lets write some assembly code</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">COURSE SPECIFIC MATERIAL</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../course/specifics.html">10. BU CS210 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../course/specifics.html">17. BU CS210 Overview</a></li>
 </ul>
 
     </div>
@@ -443,9 +450,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">9.1. Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-gdb">9.2. Getting Started with gdb</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">9.3. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">15.1. Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-gdb">15.2. Getting Started with gdb</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">15.3. Exercises</a></li>
 </ul>
             </nav>
         </div>
@@ -458,13 +465,13 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="machine-debuggers-open-process-surgery">
-<h1><span class="section-number">9. </span>Machine Debuggers &amp; Open Process Surgery<a class="headerlink" href="#machine-debuggers-open-process-surgery" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">15. </span>Machine Debuggers &amp; Open Process Surgery<a class="headerlink" href="#machine-debuggers-open-process-surgery" title="Permalink to this heading">#</a></h1>
 <p>While you may be familiar with debuggers and their use to find bugs in Java or python code there is much more to them than meets the eye.</p>
 <p>There are low-level-debuggers that are designed and built to allow you to inspect and control the cpu and memory of a process, giving you direct access to the inner binary works of the computer and your code while it is running.  In addition, low-level-debuggers  may simultaneously let you work symbolically (with the source code of the program being debugged).  This lets you both see what is going on in the CPU and memory and how this relates to the original ASCII source files you wrote to create the binary being run in the process.  In our case the source files will be assembly source at first and then C later.   Regardless using the underlying view of the CPU and memory will reveal what is really going on.</p>
 <figure class="align-default" id="id1">
 <img alt="surgery" src="../images/src/surg.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 9.1 </span><span class="caption-text">Using a debugger to conduct open Process Surgery.  This figure illustrates the analogy between using a debugger like gdb to explore and mainiputate a process in a way that is similar to conducting a robotic surgery on a human patient. The patient is a running process, the robotic surgery tool is a gdb process attached to the target process, and finally the terminal we are running gdb is our inteface where we use the facilities of gdb to explore and mainipulate the target process.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 15.1 </span><span class="caption-text">Using a debugger to conduct open Process Surgery.  This figure illustrates the analogy between using a debugger like gdb to explore and mainiputate a process in a way that is similar to conducting a robotic surgery on a human patient. The patient is a running process, the robotic surgery tool is a gdb process attached to the target process, and finally the terminal we are running gdb is our inteface where we use the facilities of gdb to explore and mainipulate the target process.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>While they  can seem intimidating at first such low-level debuggers are incredibly powerful tools that help us freeze, dissect and modify a running program.   In some sense they let us conduct <a href="#fig:surgery">surgery</a> on a process.  In doing so the anatomy of the hardware and software are laid bare for us to see and manipulate.</p>
@@ -472,7 +479,7 @@ document.write(`
 <figure class="align-default" id="id2">
 <img alt="tui" src="../images/src/tui.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 9.2 </span><span class="caption-text">Example of using the ‘TUI’ mode of gdb. Using the flexibility of TUI mode we have a more controlled view, where we can see both registers and run commands</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 15.2 </span><span class="caption-text">Example of using the ‘TUI’ mode of gdb. Using the flexibility of TUI mode we have a more controlled view, where we can see both registers and run commands</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <blockquote>
@@ -480,11 +487,11 @@ document.write(`
 </div></blockquote>
 <p>From here on in we will use gdb as our working choice but it is worth remembering that the concepts we talk about are applicable to other debuggers like <code class="docutils literal notranslate"><span class="pre">xdb</span></code> and <code class="docutils literal notranslate"><span class="pre">lldb</span></code>.</p>
 <section id="overview">
-<h2><span class="section-number">9.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">15.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <figure class="align-default" id="id3">
 <img alt="gdbprocesses" src="../images/src/pgm.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 9.3 </span><span class="caption-text">Debugger in control of a target process running the executable myPgm.  Here two processes; 1) running the executable <code class="docutils literal notranslate"><span class="pre">myPgm</span></code> and 2) running the <code class="docutils literal notranslate"><span class="pre">gdb</span></code> executable.  <code class="docutils literal notranslate"><span class="pre">gdb</span></code> establishes a special relationship to the target process.  In particular, it uses special calls to the operating system kernel to control the target process and access the data structures that the kernel uses to maintain the memory and cpu state of the process, called its ‘Context’.  Like other standard UNIX processes gdb has a connection to a terminal.  This allows the user to explore and mainpulate the target process via the commands of gdb. The software in a UNIX kernel that represents a processes connction to a terminal is called a <code class="docutils literal notranslate"><span class="pre">tty</span></code></span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 15.3 </span><span class="caption-text">Debugger in control of a target process running the executable myPgm.  Here two processes; 1) running the executable <code class="docutils literal notranslate"><span class="pre">myPgm</span></code> and 2) running the <code class="docutils literal notranslate"><span class="pre">gdb</span></code> executable.  <code class="docutils literal notranslate"><span class="pre">gdb</span></code> establishes a special relationship to the target process.  In particular, it uses special calls to the operating system kernel to control the target process and access the data structures that the kernel uses to maintain the memory and cpu state of the process, called its ‘Context’.  Like other standard UNIX processes gdb has a connection to a terminal.  This allows the user to explore and mainpulate the target process via the commands of gdb. The software in a UNIX kernel that represents a processes connction to a terminal is called a <code class="docutils literal notranslate"><span class="pre">tty</span></code></span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Let’s begin with an overview of the relationship between the debugger and the process we want to debug running a particular binary executable.</p>
@@ -516,10 +523,10 @@ document.write(`
 <p>Oh and maybe one more terminal for the man pages ;-)</p>
 </section>
 <section id="getting-started-with-gdb">
-<h2><span class="section-number">9.2. </span>Getting Started with gdb<a class="headerlink" href="#getting-started-with-gdb" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">15.2. </span>Getting Started with gdb<a class="headerlink" href="#getting-started-with-gdb" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="exercises">
-<h2><span class="section-number">9.3. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">15.3. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
@@ -572,15 +579,15 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>Executables and Processes</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Executables and Processes</p>
       </div>
     </a>
     <a class="right-next"
-       href="../course/specifics.html"
+       href="assembly.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10. </span>BU CS210 Overview</p>
+        <p class="prev-next-title"><span class="section-number">16. </span>Lets write some assembly code</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -600,9 +607,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">9.1. Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-gdb">9.2. Getting Started with gdb</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">9.3. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">15.1. Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-gdb">15.2. Getting Started with gdb</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">15.3. Exercises</a></li>
 </ul>
   </nav></div>
 

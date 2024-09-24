@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6. Introduction: Assembly Programming &#8212; Under the Covers</title>
+    <title>12. Introduction: Assembly Programming &#8212; Under the Covers</title>
   
   
   
@@ -61,8 +61,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'assembly/intro';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="7. The von Neumann Architecture" href="vonNeumannArchitecture.html" />
-    <link rel="prev" title="5. The Shell - Part II: Some UNIX details" href="../unix/shelldetails.html" />
+    <link rel="next" title="13. The von Neumann Architecture" href="vonNeumannArchitecture.html" />
+    <link rel="prev" title="11. Git" href="../unix/git.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -191,17 +191,24 @@
 <li class="toctree-l1"><a class="reference internal" href="../unix/files.html">3. Organizing and Managing Information as a Tree of Files and Directories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../unix/shellintro.html">4. The Shell - Part I: Having an ASCII conversation with the OS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../unix/shelldetails.html">5. The Shell - Part II: Some UNIX details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/editors.html">6. Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/processes.html">7. Processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/ides.html">8. IDEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/make.html">9. Make</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/gitintro.html">10. Intro to Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unix/git.html">11. Git</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">THE BELLY OF THE BEAST: THE VON NEUMMAN ARCHITECTURE AND ASSEMBLY PROGRAMMING</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Introduction: Assembly Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vonNeumannArchitecture.html">7. The von Neumann Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="UnixAssemblyProgramming.html">8. Executables and Processes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Debuggers.html">9. Machine Debuggers &amp; Open Process Surgery</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Introduction: Assembly Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vonNeumannArchitecture.html">13. The von Neumann Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UnixAssemblyProgramming.html">14. Executables and Processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Debuggers.html">15. Machine Debuggers &amp; Open Process Surgery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assembly.html">16. Lets write some assembly code</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">COURSE SPECIFIC MATERIAL</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../course/specifics.html">10. BU CS210 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../course/specifics.html">17. BU CS210 Overview</a></li>
 </ul>
 
     </div>
@@ -445,9 +452,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-code">6.1. Machine Code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assembly-code">6.2. Assembly Code</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assembly-programming">6.2.1. Assembly Programming</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-code">12.1. Machine Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assembly-code">12.2. Assembly Code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assembly-programming">12.2.1. Assembly Programming</a></li>
 </ul>
 </li>
 </ul>
@@ -462,12 +469,12 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-assembly-programming">
-<h1><span class="section-number">6. </span>Introduction: Assembly Programming<a class="headerlink" href="#introduction-assembly-programming" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">12. </span>Introduction: Assembly Programming<a class="headerlink" href="#introduction-assembly-programming" title="Permalink to this heading">#</a></h1>
 <p>Assembly Programming means writing code in the language that the hardware of the computer understands – or at least very close to it.
 Most programmers are completely unaware of how the computer really works, as the languages that they program in are not directly supported by the hardware.  Rather, most languages, such as JavaScript, Java, Python, Ruby, Rust, C#, C++, and even C must be translated into the native code that the computer does understand – machine code.</p>
 <p><a id="machinecode_sec"></a></p>
 <section id="machine-code">
-<h2><span class="section-number">6.1. </span>Machine Code<a class="headerlink" href="#machine-code" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">12.1. </span>Machine Code<a class="headerlink" href="#machine-code" title="Permalink to this heading">#</a></h2>
 <p>The hardware of the computer is built out of electrical components that can store and interpret patterns of  bits, eg. binary digits.  A single bit can be thought of as a switch that can be in two positions “ON” – 1  and “OFF” – 0.  A group of eight bits forms a byte.  We will say  a lot more about bytes  a little <a href="../assembly/InfoRepl.ipynb#THEBYTE_sec">later</a>.  The main thing to observe is that a byte is easily expressed as an 8 digit binary, (base 2), number.  Given that there are 8 bits, a byte can take on <span class="math notranslate nohighlight">\(2^8=256\)</span>
 unique values ranging from <span class="math notranslate nohighlight">\(00000000\)</span> to <span class="math notranslate nohighlight">\(11111111\)</span>.</p>
 <p>Machine code is a binary code – meaning that binary values are used to encode the operations and values that make up a program.   The following table lists twenty of the machine codes of a <a class="reference external" href="https://en.wikipedia.org/wiki/MOS_Technology_6502">MOS 6502 Centeral Processing Unit (CPU)</a> which has a very simple machine code.</p>
@@ -553,7 +560,7 @@ unique values ranging from <span class="math notranslate nohighlight">\(00000000
 </div>
 </section>
 <section id="assembly-code">
-<h2><span class="section-number">6.2. </span>Assembly Code<a class="headerlink" href="#assembly-code" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">12.2. </span>Assembly Code<a class="headerlink" href="#assembly-code" title="Permalink to this heading">#</a></h2>
 <p>Assembly code is a slightly more generic human friendly code that we can use to program a computer.  Machine code must be expressed purely in numbers, but assembly code uses structured text that can be easily translated by a set of tools into the equivalent machine code.   Each group of machine operations of the CPU that does the same function is assigned a human text <strong>mnemonic</strong>, often referred to as an <strong>instruction</strong>.  For example the following are the 8 different 6502 machine code operations that add two numbers:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -614,7 +621,7 @@ unique values ranging from <span class="math notranslate nohighlight">\(00000000
 <p>Unlike our previous machine code version, the assembly language version is written using mnemonics. It also has comments, thus making it at least “readable” by a human.  However, unlike other programming languages that you might be familiar with, you likely still cannot REALLY read it (except maybe for the comments).  Eg. you probably cannot tell that it a simple program to add two numbers or how and why it works.    For that matter, even if you can figure out what it does, how do you get at the result?</p>
 <p>To understand assembly language we need to understand what the operations of the CPU are and what they do.  To achieve this, we must understand the basic functioning of the CPU and the rest of the hardware that makes up the computer.</p>
 <section id="assembly-programming">
-<h3><span class="section-number">6.2.1. </span>Assembly Programming<a class="headerlink" href="#assembly-programming" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">12.2.1. </span>Assembly Programming<a class="headerlink" href="#assembly-programming" title="Permalink to this heading">#</a></h3>
 <p>As we will see later, the assembly language, understood by the assembler, includes additional syntax for carefully controlling and placing arbitrary values in memory beyond just opcodes.  Assembly programming is all about understanding how the computer works and creating an initial image of memory that, when loaded, will get the computer to do what you want.</p>
 <div class="important admonition">
 <p class="admonition-title">Concept</p>
@@ -655,12 +662,12 @@ unique values ranging from <span class="math notranslate nohighlight">\(00000000
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../unix/shelldetails.html"
+       href="../unix/git.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>The Shell - Part II: Some UNIX details</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Git</p>
       </div>
     </a>
     <a class="right-next"
@@ -668,7 +675,7 @@ unique values ranging from <span class="math notranslate nohighlight">\(00000000
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>The von Neumann Architecture</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>The von Neumann Architecture</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -688,9 +695,9 @@ unique values ranging from <span class="math notranslate nohighlight">\(00000000
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-code">6.1. Machine Code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assembly-code">6.2. Assembly Code</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assembly-programming">6.2.1. Assembly Programming</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-code">12.1. Machine Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assembly-code">12.2. Assembly Code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assembly-programming">12.2.1. Assembly Programming</a></li>
 </ul>
 </li>
 </ul>
