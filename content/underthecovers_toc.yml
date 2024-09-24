@@ -13,6 +13,12 @@ parts:
   - file: unix/files
   - file: unix/shellintro
   - file: unix/shelldetails
+  - file: unix/editors
+  - file: unix/processes
+  - file: unix/ides
+  - file: unix/make
+  - file: unix/gitintro
+  - file: unix/git
 - caption: "THE BELLY OF THE BEAST: THE VON NEUMMAN ARCHITECTURE AND ASSEMBLY PROGRAMMING"
   numbered: true
   chapters:
@@ -20,6 +26,7 @@ parts:
   - file: assembly/vonNeumannArchitecture
   - file: assembly/UnixAssemblyProgramming
   - file: assembly/Debuggers
+  - file: assembly/assembly
 - caption: "COURSE SPECIFIC MATERIAL"
   numbered: true
   chapters:
