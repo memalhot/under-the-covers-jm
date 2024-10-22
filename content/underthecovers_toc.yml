@@ -27,6 +27,8 @@ parts:
   - file: assembly/UnixAssemblyProgramming
   - file: assembly/Debuggers
   - file: assembly/assembly
+  - file: assembly/InfoRepI
+  - file: assembly/nativetypes
   - file: assembly/anatomyI
   - file: assembly/anatomyII
   - file: assembly/anatomyIII
