@@ -673,8 +673,8 @@ Further, to avoid ambiguity  <code class="docutils literal notranslate"><span cl
 </section>
 <section id="gdb-display-and-set-registers">
 <h4><span class="section-number">17.2.1.2. </span>GDB Display and Set Registers<a class="headerlink" href="#gdb-display-and-set-registers" title="Permalink to this heading">#</a></h4>
-<div style="background-color:LimeGreen;">
-<img style="display: inline; margin: auto auto auto auto;" align="left" width="40px" src="../images/do.svg">
+<div class="tip admonition">
+<p class="admonition-title">DO</p>
 <p><strong>GDB:</strong> The following are some basic gdb commands for working with registers.  We will learn more advanced syntax later but this will get us going.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">/t</span> <span class="pre">$&lt;register</span> <span class="pre">name&gt;</span></code> : print out the current value of a register in binary notation</p></li>
@@ -689,7 +689,8 @@ GDB will add leading zeros as necessary to pad out any value that is smaller tha
 register.  Similarly, gdb will ignore all lead values that are beyond the size of the register.</p>
 <p>The gdb command <code class="docutils literal notranslate"><span class="pre">p</span></code> stands for print.   GDB has many built in encodings and notations that it understands.  In the above, the <code class="docutils literal notranslate"><span class="pre">/t</span></code> and<code class="docutils literal notranslate"> <span class="pre">/x</span></code> specified the format, or notation, we wanted to print the value in.  More generally, the format syntax is very rich. The print command format syntax is a restricted set of the examine memory command (<code class="docutils literal notranslate"><span class="pre">x</span></code>) format syntax.  We will discuss examining memory when we discuss working with memory in GDB later in this chapter.  Remember, you can use the <code class="docutils literal notranslate"><span class="pre">help</span></code> command in gdb to learn more about any command.   However, the <code class="docutils literal notranslate"><span class="pre">help</span></code> documentation can be a little overwhelming at first.</p>
 <p>Open the following to see an x86-64 example session using these commands (we encourage you to try this yourself and to play around).</p>
-</div><div class="cell tag_remove-input tag_hide-output docutils container">
+</div>
+<div class="cell tag_remove-input tag_hide-output docutils container">
 </div>
 </section>
 </section>
@@ -720,9 +721,10 @@ Most processors today directly support operations on one, two, four and 8-byte v
 <p>As an example, the following figure is an extract from the INTEL software development manuals explaining the support their CPUs have for working with 1,2,4,8 and 16-byte quantities.   In our coverage, we will not look at sizes greater than 64 bit as these tend to be custom and not uniformly supported across processors.</p>
 <div class="cell tag_remove-input docutils container">
 </div>
-<blockquote>
-<div><p><a class="reference internal" href="images/fyi.png"><img alt="images/fyi.png" class="align-left" src="images/fyi.png" style="width: 60px;" /></a> <p style="background-color:powderblue;"> Many processors today integrate custom support for even larger multi-byte values such as 128, 256 and even 512 bits.   Such larger quantities, and the registers that support them, are often used for a mode of operation called vector processing.   In this mode, the large group of bytes are used to hold a vector of values that are operated on as a group.  For example, one might use such registers to hold a vector of 128 four-byte quantities that can be operated on together.  One such operation could be to add one vector of values to another vector of values using a single instruction.  Internally, the processor has support for doing independent calculations concurrently.  This is actually a model of parallel processing called <a class="reference external" href="https://en.wikipedia.org/wiki/Single_instruction,_multiple_data">Single Instruction Multiple Data (SIMD)</a>.  SIMD operation is critical to achieving high performance when working on data intensive applications.  This includes linear algebra intensive Machine Learning/AI and graphics applications.  Examples of such support are <a class="reference external" href="https://en.wikipedia.org/wiki/AVX-512">INTEL’s AVX512</a> and <a class="reference external" href="https://developer.arm.com/documentation/102340/0001/Introducing-SVE2">ARM’s SVE</a>.  A hallmark of Graphics Processing Units (GPUs), and their usefulness for improving the performance of  Machine Learning tasks, is their support for vector processing and SIMD operation.</p>
-</div></blockquote>
+<div class="note admonition">
+<p class="admonition-title">FYI</p>
+<p>Many processors today integrate custom support for even larger multi-byte values such as 128, 256 and even 512 bits.   Such larger quantities, and the registers that support them, are often used for a mode of operation called vector processing.   In this mode, the large group of bytes are used to hold a vector of values that are operated on as a group.  For example, one might use such registers to hold a vector of 128 four-byte quantities that can be operated on together.  One such operation could be to add one vector of values to another vector of values using a single instruction.  Internally, the processor has support for doing independent calculations concurrently.  This is actually a model of parallel processing called <a class="reference external" href="https://en.wikipedia.org/wiki/Single_instruction,_multiple_data">Single Instruction Multiple Data (SIMD)</a>.  SIMD operation is critical to achieving high performance when working on data intensive applications.  This includes linear algebra intensive Machine Learning/AI and graphics applications.  Examples of such support are <a class="reference external" href="https://en.wikipedia.org/wiki/AVX-512">INTEL’s AVX512</a> and <a class="reference external" href="https://developer.arm.com/documentation/102340/0001/Introducing-SVE2">ARM’s SVE</a>.  A hallmark of Graphics Processing Units (GPUs), and their usefulness for improving the performance of  Machine Learning tasks, is their support for vector processing and SIMD operation.</p>
+</div>
 </section>
 <section id="endianness">
 <h4><span class="section-number">17.2.2.4. </span>“Endianness”<a class="headerlink" href="#endianness" title="Permalink to this heading">#</a></h4>
@@ -777,8 +779,8 @@ The wikipedia page on Endianness discusses both the implications on <a class="re
 </section>
 <section id="gdb-and-memory">
 <h4><span class="section-number">17.2.2.6. </span>GDB and Memory<a class="headerlink" href="#gdb-and-memory" title="Permalink to this heading">#</a></h4>
-<div style="background-color:LimeGreen;">
-<img style="display: inline; margin: auto auto auto auto;" align="left" width="40px" src="../images/do.svg"> 
+<div class="tip admonition">
+<p class="admonition-title">DO</p>
 <p><strong>GDB:</strong> GDB have very rich support for working with memory.  We can refer to addresses and various ways, examine memory at an address in many sizes and formats, and we can also set the value at memory locations.  It will take time for us to learn all this syntax.  But lets start with some basics commands to display addresses and examine the values starting at an address.</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">&amp;&lt;symbol&gt;</span></code> will print the address of a name that we have used in our program that gets assigned an address by the linker.  Eg. “_start”</p></li>
@@ -795,8 +797,8 @@ The wikipedia page on Endianness discusses both the implications on <a class="re
 <li><p><code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">{unsigned</span> <span class="pre">int}&lt;address=0x&lt;hex</span> <span class="pre">value&gt;</span></code> to set a four-byte value starting at the specified address to the given value.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">{unsigned</span> <span class="pre">long</span> <span class="pre">long}&lt;address=0x&lt;hex</span> <span class="pre">value&gt;</span></code> to set a eight-byte value starting at the specified address to the given value.</p></li>
 </ol>
-<p>Like when setting registers gdb will add leading zeros or truncate the the right most digits if the size we specify is larger or smaller than the value we provide.   The following example gdb session illustrates using this syntax.
-</div></p>
+<p>Like when setting registers gdb will add leading zeros or truncate the the right most digits if the size we specify is larger or smaller than the value we provide.   The following example gdb session illustrates using this syntax.</p>
+</div>
 <div class="cell tag_remove-input tag_hide-output docutils container">
 </div>
 </section>
@@ -874,10 +876,10 @@ This allows us to write ASCII mnemonics, English short hands, that the CPU manua
 <li><p>Control what happens next by controlling how the PC gets updated.</p></li>
 </ol>
 <p>How we combine theses operations and lay them out in memory to create standard programming structures, like “if statements”, “loops”, “functions” and complex data structures are the topics of the “Program Anatomy” chapters.</p>
-<div style="background-color:LimeGreen;">
-<img style="display: inline; margin: auto auto auto auto;" align="left" width="40px" src="../images/do.svg"> 
-<p><strong>GDB:</strong> One the most powerful aspects of gdb is its built in support for the cpu machine code encoding.  Specifically, it has the support for “disassembling” location of memory.  That is to say it can decode the opcodes in memory and print to its user the mnemonics that they correspond too.  As mentioned before the examine memory command <code class="docutils literal notranslate"><span class="pre">x</span></code> support several format specifiers.  One of them is <code class="docutils literal notranslate"><span class="pre">i</span></code> which means that that the memory location being examined should be decoded as an instruction.  GDB will examine the location and use its built in disassembler to translates the bytes at that location into the CPU mnemonic it corresponds to. CPU’s like INTEL can use several bytes to encode a single instruction and as part of disassembly GDB will know where this instruction ends.  If a count is given to the examine command along with the <code class="docutils literal notranslate"><span class="pre">i</span></code> format gdb will go on and attempt to disassemble successive memory addresses necessary to print the number of instruction specified.  The following shows and example of this using a simple assemble program.  You don’t need to worry to much about what this programming is doing at this point main thing to note is gdb’s ability to reverse the process of the assembler.  Note in the below example we do not need to create a process to disassemble it as the memory values can all be read directly form the binary executable file.
-</div></p>
+<div class="tip admonition">
+<p class="admonition-title">DO</p>
+<p><strong>GDB:</strong> One the most powerful aspects of gdb is its built in support for the cpu machine code encoding.  Specifically, it has the support for “disassembling” location of memory.  That is to say it can decode the opcodes in memory and print to its user the mnemonics that they correspond too.  As mentioned before the examine memory command <code class="docutils literal notranslate"><span class="pre">x</span></code> support several format specifiers.  One of them is <code class="docutils literal notranslate"><span class="pre">i</span></code> which means that that the memory location being examined should be decoded as an instruction.  GDB will examine the location and use its built in disassembler to translates the bytes at that location into the CPU mnemonic it corresponds to. CPU’s like INTEL can use several bytes to encode a single instruction and as part of disassembly GDB will know where this instruction ends.  If a count is given to the examine command along with the <code class="docutils literal notranslate"><span class="pre">i</span></code> format gdb will go on and attempt to disassemble successive memory addresses necessary to print the number of instruction specified.  The following shows and example of this using a simple assemble program.  You don’t need to worry to much about what this programming is doing at this point main thing to note is gdb’s ability to reverse the process of the assembler.  Note in the below example we do not need to create a process to disassemble it as the memory values can all be read directly form the binary executable file.</p>
+</div>
 <div class="cell tag_remove-input tag_hide-output docutils container">
 </div>
 </section>
@@ -901,11 +903,12 @@ This allows us to write ASCII mnemonics, English short hands, that the CPU manua
 </li>
 </ol>
 <p>Our focus will be to understand the <a class="reference internal" href="nativetypes.html"><span class="std std-doc">Native Types</span></a>  and Programmer Defined Types.  The later we will discuss part of our coverage of program anatomy.  With an understanding of these you can go on to but understand the Standardized Data Formats and for that matter create your own.</p>
-<div style="background-color:LimeGreen;">
-<img style="display: inline; margin: auto auto auto auto;" align="left" width="40px" src="../images/do.svg"> 
+<div class="tip admonition">
+<p class="admonition-title">DO</p>
 <p><strong>GDB:</strong> Gdb has built-in support to help us encode and decode the native types of the hardware.  Using this support can be very useful in learning how these types are represented in binary.  To do this we must know how to tell gdb what types we are working with.  As mentioned before the print and examine command support several data formats that correspond to the native types of the cpu.  See help examine output in the example below.  In order to set a value to a specific type we must carefully specify the value in a way gdb knows what encoding to use.  We will look at these in more detail as we examine the various encodings.  Note the assemble also understands various encodings to make our job easier when writing assembly code as well.  In the following we will only use the examine syntax and the ability to enclose a ASCII character in single quotes to tell gdb to encode it into a binary value. Another things we illustrate is gdb’s knowledge of the fact that ASCII
 strings are by convention encoded as a sequence of memory locations encoded in ASCII terminated by a location that has the value zero.</p>
-</div><div class="cell tag_remove-input tag_hide-output docutils container">
+</div>
+<div class="cell tag_remove-input tag_hide-output docutils container">
 </div>
 </section>
 </section>
