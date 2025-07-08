@@ -1,0 +1,44 @@
+format: jb-book
+root: underthecovers_intro
+parts:
+- caption: 'HOW TO READ THIS BOOK'
+  numbered: false
+  chapters:
+  - file: howtoread/chapter
+- caption: 'THE UNIX DEVELOPMENT ENVIRONMENT'
+  numbered: true
+  chapters:
+  - file: unix/intro
+  - file: unix/terminal
+  - file: unix/files
+  - file: unix/shellintro
+  - file: unix/shelldetails
+  - file: unix/editors
+  - file: unix/processes
+  - file: unix/ides
+  - file: unix/make
+  - file: unix/gitintro
+  - file: unix/git
+- caption: "THE BELLY OF THE BEAST: THE VON NEUMMAN ARCHITECTURE AND ASSEMBLY PROGRAMMING"
+  numbered: true
+  chapters:
+  - file: assembly/intro
+  - file: assembly/vonNeumannArchitecture
+  - file: assembly/UnixAssemblyProgramming
+  - file: assembly/Debuggers
+  - file: assembly/assembly
+  - file: assembly/InfoRepI
+  - file: assembly/nativetypes
+  - file: assembly/anatomyI
+  - file: assembly/anatomyII
+  - file: assembly/anatomyIII
+  - file: assembly/anatomyIV
+  - file: assembly/assemblyOS
+- caption: "INTO THE LIGHT: C PROGRAMMING"
+  numbered: true
+  chapters:
+  - file: c/cintro
+- caption: "COURSE SPECIFIC MATERIAL"
+  numbered: true
+  chapters:
+  - file: course/specifics
